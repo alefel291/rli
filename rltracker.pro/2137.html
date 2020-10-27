@@ -1,0 +1,666 @@
+<!DOCTYPE HTML>
+<html lang="en" class="page"><head><meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-9860cf8290582bc0246","applicationID":"704586823","transactionName":"IgxeR0tXXwlVE0xCQQAHVUAWUV0TVQ8XWUEYPENWWEpQDQ==","queueTime":0,"applicationTime":150,"agent":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-9860cf8290582bc0246",applicationID:"704586823"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script><title>Rad Rock - GE in Inventories | RLTracker.pro</title><link rel="icon" type="image/x-icon" href="favicons/3242--rl_favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" media="all" href="css/assets-application-d3f2c9fb3060b3454547947eeafb48493a6b51c8ca33ced8d782a5e9083d8389.css"><script src="js/assets-application-f963c1023591fbc15b07f3e0f9cabb17b08171f030f88dcd2c6c1b67d93dfdcb.js" data-turbolinks-track="true"></script><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="/AND9bq/9aFwP6csmhPMhn3pRgXSjAyaHvgEMce4AM0o5uvjCzL3rJNyNwrQkmAj3q/OZPbslIalG9iHi9C8dw=="><meta name="action-cable-url" content="/cable"><script type="text\/javascript" src="js/pagead%5C-show_ads.js">
+</script><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><meta name="description" content="Find great deals on our quick and simple Trading system for Rad Rock - GE. Trade and get all the Rocket League items you ever wanted. It's free!"><!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/style/css/ie8.css" media="all">
+<![endif]--><!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="/style/css/ie9.css" media="all">
+<![endif]--><script data-ad-client="ca-pub-3000815205397569" async src="js/js-adsbygoogle.js"></script><script async="async" src="js/js-gpt.js"></script><script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script><script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/21625989013/RLTracker.pro_HeaderSlot', [[728, 90], [320, 50]], 'div-gpt-ad-1502458562789-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/21625989013/RLTracker.pro_TopMPU', [[300, 600], [160, 600], [300, 250]], 'div-gpt-ad-1502457275792-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/21625989013/RLTracker.pro_FooterSlot', [[728, 90], [320, 50]], 'div-gpt-ad-1502458533707-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script></head><body class="" data-user-id="">
+      <div class="whole_wrapper">
+        <div class="container nav main_nav" style="z-index: 10000;">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-sm-3 col-xs-2" style="position: relative;z-index:1000">
+                  <a href="rltracker.html" class="pull-left">
+                    <img class="logo" alt="rocket-league-stats" src="images/assets-rl_logo-69351bcb9a7c88a286c1d11070e82f87553b08f08e95eadcae5dbd28e1b9adcc.png"><img class="logo_small" alt="rocket-league-stats" src="images/assets-logo-icon-rl-d72690c909b6b9826d9b9b3be57dd081dc05ac9b3b6bc99328a68c544fde6769.png"></a>
+                  
+                </div>
+                <div class="col-sm-7 col-xs-8">
+                  <ul class="nav_ul"><li><a href="inventory.html" class="look_up"><i class="fa fa-search" aria-hidden="true"></i><span class="remove_the_names lookup_remove"><span class="smaller_nav">Profile </span>Lookup</span></a></li>
+  <li><a href="trades.html"><i class="fa fa-exchange" aria-hidden="true"></i><span class="remove_the_names"><span class="smaller_nav">Item </span>Trading</span></a></li>
+  <li><a href="tier_breakdown.html"><i class="fa fa-line-chart" aria-hidden="true"></i><span class="remove_the_names"><span class="smaller_nav">Rank Tiers</span></span></a></li>
+  <li><a href="live_tracker.html"><i class="fa fa-terminal" aria-hidden="true"></i><span class="remove_the_names"><span class="smaller_nav">Live </span>Tracker</span></a></li>
+  <li><a href="prices.html"><i class="fa fa-key" aria-hidden="true"></i><span class="remove_the_names">Price<span class="remove_scam_name"> List</span></span></a></li>
+  <li><a href="https://discord.gg/JA99kXe" target="_BLANK"><i class="fa fa-trophy" aria-hidden="true"></i><span class="remove_the_names"><span class="move_five">Giveaway </span> </span></a></li>
+</ul><script type="text/javascript">
+$(document).ready(function(){
+  var overflowTimeout = null;
+  $(".close_search").on("click",function(){
+    clearTimeout(overflowTimeout);
+    $(".search_bar").removeClass("out_bitch").css("overflow", "hidden");
+  })
+  $(".whoops").off("click").on("click",function(){
+    $(".whoops_text").toggleClass("active")
+  })
+  $(".look_up").on("click",function(event){
+    event.preventDefault();
+    if(!$(".search_bar").hasClass("out_bitch")){
+      overflowTimeout = setTimeout(function () {
+        $(".search_bar").css("overflow", "visible");
+      }, 500);
+      clearTimeout(timer);
+      $(".search_form input").focus()
+      timeout = setTimeout(function(){
+        $(".search_bar").off("clickoutside").on("clickoutside" ,function(){
+          $(".search_bar").removeClass("out_bitch").css("overflow", "hidden");
+          $(".search_bar").off("clickoutside")
+          clearTimeout(timer);
+        })
+      },300)
+    }else{
+      clearTimeout(overflowTimeout);
+      $(".search_bar").off("clickoutside").css("overflow", "hidden");
+    }
+    $(".search_bar").toggleClass("out_bitch")
+  })
+})
+</script></div>
+                <div class="col-sm-2 nav_login" style="">
+                  <a href="sign_in.html">
+                    <div class="avatar_box pull-right " style="">
+                      <div class="status_nav online"></div>
+                    </div>
+                  </a>
+                  <div class="login_box pull-right">
+                      <a data-toggle="modal" class="login_login" href="#login">Login</a>
+                      <a data-toggle="modal" class="login_signup" href="#sign_up">Sign up</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container main_nav_sec">
+          <div class="row" style="position:relative">
+            <a class="patreon_href" href="premium.html">
+              <div class="patreon_overlay ">
+
+              </div>
+            </a>
+            <div class="col-xs-12 header search_bar" style="position:absolute;z-index:9995;">
+              <div class="lookup_form">
+  <form class="search_form" action="/profiles/lookup" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#10003;"><input type="hidden" name="authenticity_token" value="uei2GgP/8642EUge2DO7QHZSguEyTWtRkqlxHEHuuFFtDR4MsnLxo9Vc2DiSshfl1RQKgBYt800pSq2qDYYE6w=="><div class="choose_platform_small">
+      <span class="platform">Steam</span> <img class="steam top_img" alt="steam-search" src="images/assets-steam-a6dd860ebcd5d4abe98e8c618879c4c5639cb289b14a7caf4fd2666c5b314c26.png"><i class="material-icons">arrow_drop_down</i>
+      <div class="platform_choose hidden">
+        <ul><li data-id="1"><span>Steam</span><img class="steam" alt="steam-search" src="images/assets-steam-a6dd860ebcd5d4abe98e8c618879c4c5639cb289b14a7caf4fd2666c5b314c26.png"></li>
+          <li data-id="2"><span>PS4</span><img class="ps4" alt="ps4-search" src="images/assets-PS4-031ca65889fb87bc5b11225a56564488c7b77efd16ace684eede6cb4d46b813b.png"></li>
+          <li data-id="3"><span>Xbox</span><img class="xbox" alt="xbox-search" src="images/assets-xbox-0de98a5cea4bd12f9e69ec0a0209a9d9f4f7753fd28c9cdfed582ae85a9005f2.png"></li>
+          <li data-id="4"><span>All</span><img class="all" alt="all_search" src="images/assets-all-388208c462edc7e5b24dc723b4f766ed6456f463e62c25342d105736102ea319.png"></li>
+        </ul></div>
+    </div>
+    <input type="text" name="account" id="account" class="nav_search" placeholder="Look up your stats - Enter your profile ID or vanity url!" autocomplete="off"><input type="hidden" name="platform_id" id="platform_id" value="1"><div class="send_form">&nbsp;<i class="material-icons">search</i></div>
+</form>
+  <style type="text/css">
+    .top_img.all{
+      height: 18px;
+      float: right;
+      margin-right: 10px;
+    }
+    li .all{
+      width: 25px!important;
+      margin-right:3px;
+    }
+  </style></div>
+
+              <i class="fa fa-times fa-4x pull-right close_search" style="cursor:pointer;position:absolute;top:-1px;right:5px"></i>
+            </div>
+            <div class="col-xs-12 header" style="position:relative;z-index: 9994;">
+              <div class="row">
+                <div class="col-sm-3 col-xs-2 history_wrapper" style="position: absolute;left: 0;top: 9px;">
+                  <div class="pull-left history_smaller_wrapper" style="padding:9px;position: absolute;width: 370px;">
+                      <span class="pull-left" style="margin-right:10px"><span class="smaller_history">Profile Search </span>History:</span>
+                      <ul class="history_drop_down pull-left"><a href="#">
+                            <span style="padding:3px;margin-right:5px;">Nothing found</span>
+                          </a>
+                      </ul><i class="material-icons pull-left toggle_history" style="padding: 0px 0px 0 14px;margin-left: -15px;">arrow_drop_down</i>
+                  </div>
+                </div>
+                <div class="col-sm-7 col-xs-8 col-xs-offset-2 col-sm-offset-3 second_nav_cont">
+                  <ul class="sec_nav_ul"><li><a href="scam_list.html"><i class="fa fa-exclamation" aria-hidden="true"></i><span class="last_text_hide">Scammer</span><span class="scammer_hide"> List</span></a></li>
+    <li class="first_drop_down_remove"><a href="discord.html"><img src="images/o-discord-dd39a41914dbef2652815352986228463eaef2feb0028d0794628f2c8b281fdc.png" style="height: 18px;width: auto;margin-right: 3px;margin-top: -2px;" alt="discord-bot"><span class="remove_bots">Discord </span>Bot</a></li>
+
+    <li class="second_drop_down_remove"><a href="premium.html"><i class="fa fa-star" aria-hidden="true"></i><span class="remove_the_names">Premium</span></a></li>
+</ul></div>
+              </div>
+              <h1 class="take_this_title_its_dangerous_out_there"></h1><p>Title Placeholder</p><div class="pull-right actions"></div>
+            </div>
+          </div>
+        </div>
+        <div class="container main-wrapper" style="">
+          <div class="row">
+            
+            
+            <div class="col-sm-10 col-sm-offset-1" id="rip_col" style="clear:both">
+                <div class="row" style="margin-top:20px">
+    <div class="col-sm-12 decide decide_149198">
+        <!-- ads.show_big_rl -->
+<script async src="js/js-adsbygoogle.js"></script><!-- Main Page --><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3000815205397569" data-ad-slot="6522934069" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+  </div>
+
+  <style type="text/css">
+    .decide{
+      text-align: center;
+      min-height:90px;
+    }
+  </style><div>
+
+
+</div>
+<div class="fav_no_category main_box main_stats_box" style="position: relative;">
+  <h4 class="fav_heading">Rad Rock - GE</h4>
+  <div class="content_box">
+    <div class="container">
+      <div class="trade_menu">
+  <div class="">
+    <ul class="pull-left"><li><a style="border-right: 1px solid rgba(255,255,255,0.4);" class="menu_anchor " href="trades.html"><i class="fa fa-home"></i><span class="remove_trade_menu_span2">Home</span></a></li><!--
+      --><li><a style="border-right: 1px solid rgba(255,255,255,0.4);" class="menu_anchor " href="trades.html"><i class="fa fa-refresh"></i><span class="remove_trade_menu_span2">Auto refresh</span></a></li><!--
+      --><!--
+      --><li class="search_remove_menu"><a style="border-right: 1px solid rgba(255,255,255,0.4);" class="menu_anchor active" href="search.html"><i class="fa fa-search" aria-hidden="true"></i><span class="remove_trade_menu_span2">Search</span><span class="remove_trade_menu_span"> Trade</span></a></li>
+    </ul><div class="clear_me"></div>
+    <ul class="pull-right remove_me"><li><a style="border-left: 1px solid rgba(255,255,255,0.4);" class="menu_anchor " href="new.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i>New<span class="remove_trade_menu_span"> Trade</span> </a></li>
+    </ul><ul class="pull-right add_me"></ul><div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(".chat_setting_btn").off("click").on("click",function(event){
+      event.preventDefault()
+      if($("#chat_settings").length == 0){
+        $.ajax({
+          url:"/chat/get_chat_settings",
+          success:function(data){
+            $("body").append(data)
+            $("#chat_settings").modal()
+            $('#chat_settings').on('hidden.bs.modal', function (e) {
+              $(this).remove()
+            })
+          }
+        })
+      }else{
+        $("#chat_settings").remove()
+        $(".modal-backdrop").remove()
+      }
+    })
+</script><style type="text/css">
+  .trade_menu i{
+    margin-right:8px;
+  }
+  .trade_menu{
+    background: rgb(57,57,57);
+    height: 40px;
+    margin: -20px -35px 0 -35px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .trade_menu ul li{
+    display: inline-block;
+  }
+  .trade_menu ul{
+    list-style: none;
+  }
+  .trade_menu a, .trade_menu a:active, .trade_menu a:visited, .trade_menu a:active, .trade_menu a:link{
+    color:white;
+    padding:10px;
+  }
+  .menu_anchor{
+    padding: 5px;
+    display: inline-block;
+  }
+  .chat_setting_btn{
+
+  }
+</style><br><div class="row trade_show_row">
+        <div class="col-sm-3 image_col" style="position:relative">
+          <div style="background:url(/images/rl-items/2137/0.png);width:100%;height:auto;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+        </div>
+        <div class="col-sm-9 details_col" style="position:relative">
+          <div class="row">
+
+            <div class="col-sm-8">
+              <div class="row">
+                <div class="col-sm-4">
+                  Name:
+                </div>
+                <div class="col-sm-8">
+                  <strong>Rad Rock - GE</strong>
+                </div>
+                <div class="col-sm-4">
+                  Rarity:
+                </div>
+                <div class="col-sm-8">
+                  <span style="color:#FF7E45">Limited</span>
+                </div>
+
+                <div class="col-sm-4">
+                  Certified possible?
+                </div>
+                <div class="col-sm-8">
+                  Yes
+                </div>
+
+                <div class="col-sm-4">
+                  Color possible
+                </div>
+                <div class="col-sm-8">
+                  Yes
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+            </div>
+            <div class="col-xs-12">
+              <hr style="margin-bottom:18px inherit; height: 2px;"></div>
+            <div style="position:absolute;bottom:0;width: 100%;">
+              <div class="row">
+                <div class="col-xs-2">
+                  <span class="selector">Certified</span>
+                </div>
+                <div class="col-xs-10">
+                      <span class="selector no-select-bruh" data-id="1" data-type="cert" style="background:#789096">Acrobat</span>
+                      <span class="selector no-select-bruh" data-id="2" data-type="cert" style="background:#789096">Aviator</span>
+                      <span class="selector no-select-bruh" data-id="3" data-type="cert" style="background:#789096">Goalkeeper</span>
+                      <span class="selector no-select-bruh" data-id="4" data-type="cert" style="background:#789096">Guardian</span>
+                      <span class="selector no-select-bruh" data-id="5" data-type="cert" style="background:#789096">Juggler</span>
+                      <span class="selector no-select-bruh" data-id="6" data-type="cert" style="background:#789096">Paragon</span>
+                      <span class="selector no-select-bruh" data-id="7" data-type="cert" style="background:#789096">Playmaker</span>
+                      <span class="selector no-select-bruh" data-id="8" data-type="cert" style="background:#789096">Scorer</span>
+                      <span class="selector no-select-bruh" data-id="9" data-type="cert" style="background:#789096">Show-Off</span>
+                      <span class="selector no-select-bruh" data-id="10" data-type="cert" style="background:#789096">Sniper</span>
+                      <span class="selector no-select-bruh" data-id="11" data-type="cert" style="background:#789096">Striker</span>
+                      <span class="selector no-select-bruh" data-id="12" data-type="cert" style="background:#789096">Sweeper</span>
+                      <span class="selector no-select-bruh" data-id="13" data-type="cert" style="background:#789096">Tactician</span>
+                      <span class="selector no-select-bruh" data-id="14" data-type="cert" style="background:#789096">Turtle</span>
+                      <span class="selector no-select-bruh" data-id="15" data-type="cert" style="background:#789096">Victor</span>
+                      <span class="selector no-select-bruh" data-id="16" data-type="cert" style="background:#789096">Any Cert</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-2">
+                 <span class="selector">Colors</span>
+                </div>
+                <div class="col-xs-10">
+                      <span class="selector no-select-bruh" data-id="1" data-type="color" style="background:#000000;color:white">Black</span>
+                      <span class="selector no-select-bruh" data-id="2" data-type="color" style="background:#e97451;">Burnt Sienna</span>
+                      <span class="selector no-select-bruh" data-id="3" data-type="color" style="background:#0047AB;">Cobalt</span>
+                      <span class="selector no-select-bruh" data-id="4" data-type="color" style="background:#DC143C;">Crimson</span>
+                      <span class="selector no-select-bruh" data-id="5" data-type="color" style="background:#228B22;">Forest Green</span>
+                      <span class="selector no-select-bruh" data-id="6" data-type="color" style="background:#808080;">Grey</span>
+                      <span class="selector no-select-bruh" data-id="7" data-type="color" style="background:#00FF00;">Lime</span>
+                      <span class="selector no-select-bruh" data-id="8" data-type="color" style="background:#FFA500;">Orange</span>
+                      <span class="selector no-select-bruh" data-id="9" data-type="color" style="background:#800080;">Purple</span>
+                      <span class="selector no-select-bruh" data-id="10" data-type="color" style="background:#d5eb00;">Saffron</span>
+                      <span class="selector no-select-bruh" data-id="11" data-type="color" style="background:#7ec0ee;">Sky Blue</span>
+                      <span class="selector no-select-bruh" data-id="12" data-type="color" style="background:#dddddd;">Titanium White</span>
+                      <span class="selector no-select-bruh" data-id="13" data-type="color" style="background:#FF69B4;">Pink</span>
+                      <span class="selector no-select-bruh" data-id="14" data-type="color" style="background:#ffffff;">Colored</span>
+                      <span class="selector no-select-bruh" data-id="15" data-type="color" style="background:#808080;">Set</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <hr style="margin-bottom:18px inherit; height: 2px;"><h5>Rad Rock - GE</h5>
+
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+
+             <div class="col-sm-12 col-xs-12 offers_table">
+               <div class="col-xs-4" style="font-weight:bold;border-bottom: 2px solid #ddd;">Tags</div>
+               <div class="col-xs-2" style="font-weight:bold;border-bottom: 2px solid #ddd;">Platform</div>
+               <div class="col-xs-2" style="font-weight:bold;border-bottom: 2px solid #ddd;">Ask price</div>
+               <div class="col-xs-1" style="font-weight:bold;border-bottom: 2px solid #ddd;">Amount</div>
+               <div class="col-xs-3" style="font-weight:bold;border-bottom: 2px solid #ddd;">User</div>
+                 <div class="col-xs-12" style="font-weight:bold;text-align:center;padding:10px">
+                   Rad Rock - GE is in nobodys inventory yet.
+                 </div>
+             </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+  })
+  $("[data-target='.users_requests']").on("click",function(){
+    id = $(this).closest(".user_actions").data("id")
+    trade_type = $(this).closest('.user_actions').data("trade")
+    $.ajax({
+      url:"/trading/get_requests",
+      data:{id:id,trade_type:trade_type},
+      success:function(data){
+        $("body").append(data)
+        $(".s").modal("show")
+      }
+    })
+  })
+  $(".selector").on("click",function(){
+    if(!$(this).hasClass('active')){
+
+      $(this).closest(".col-xs-10").find(".selector").removeClass('active').addClass('inactive')
+      $(this).addClass('active').removeClass('inactive')
+    }else{
+      $(this).removeClass("active")
+      $(this).closest(".col-xs-10").find(".selector").removeClass("inactive")
+    }
+    if($(".selector.active").length == 2){
+      $(".offers_table .offer_table_row").addClass('hidden')
+      $(".offer_table_row[data-"+$(".active").eq(0).data("type")+"='"+$(".active").eq(0).data("id")+"'][data-"+$(".active").eq(1).data("type")+"='"+$(".active").eq(1).data("id")+"']").removeClass("hidden")
+    }else if($(".selector.active").length == 1){
+      $(".offers_table .offer_table_row").addClass('hidden')
+      $(".offer_table_row[data-"+$(".active").data("type")+"='"+$(".active").data("id")+"']").removeClass("hidden")
+    }else{
+      $(".offers_table .offer_table_row").removeClass('hidden')
+    }
+  })
+  $(".image_col,.details_1,.details_col").height($(".image_col").width())
+  $(".image_col div").height($(".image_col div").width())
+  $(".image_col,.details_1,.details_col").css("min-height","300px")
+</script><style type="text/css">
+  .fav_heading a,.fav_heading a:hover,.fav_heading a:visited,.fav_heading a:active,.fav_heading a:focus{
+    color:white;
+  }
+  .status_icon{
+    padding:5px;
+    background: red;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 4px;
+    top: 11px;
+    border: 1px solid #00000055;
+  }
+  .popover{
+    min-width:250px;
+  }
+  .status_icon.idle{
+    background:orange;
+  }
+  .status_icon.online{
+    background:green;
+  }
+  .attr_span{
+    padding:5px;
+    border-radius:5px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .btn-secondary{
+    background:#07bbd3;
+  }
+</style></div>
+
+            
+          </div>
+        </div>
+      </div>
+        
+    <div id="login" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Sign In</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4" style="color:white;border-right:solid grey 1px">
+                <div>Authorize with</div>
+                <a href="steam.html" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:#212121;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="images/platforms-steam-e99c23c41d76d5d13868ea532e815d7fd6696771c263d4336d20346ed4875858.png" alt="Steam"></div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:#212121;width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Steam
+                    </div>
+                  </div>
+                </a>
+
+                <div style="clear:both"></div>
+                <a href="auth.html" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:rgb(115,137,214);margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="images/platforms-discordlogo-d2efe994cc89b53fc4dd401333563ae3415ca94bf079f3b8e883f9474e117f2b.png" alt="Discordlogo"></div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:rgb(115,137,214);width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Discord
+                    </div>
+                  </div>
+                </a>
+                <div style="clear:both"></div>
+                <a href="twitch.html" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:#551A8B;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="images/platforms-twitch-29f8c7a3f8bbdd4b0a505606ccce947e297ea2755c886d7f1da6536ae099dc6d.png" alt="Twitch"></div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:#551A8B;width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Twitch
+                    </div>
+                  </div>
+                </a>
+                <div style="clear:both"></div>
+                <a href="reddit.html" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:#ff4500;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="images/platforms-reddit-a461f8f751951f040460f37f322f61e6f7a14402326b4a6e78174a13e17fe423.png" alt="Reddit"></div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:#ff4500;width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Reddit
+                    </div>
+                  </div>
+                </a>
+                <!--
+                <div style="clear:both"></div>
+                <a href="/auth/twitter" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:#4099ff;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="/assets/platforms/twitre-28ce324412abd4ce8b78e5af59cc5e0f7699653f6b2624e0e4c4e7911916d9b6.png" alt="Twitre" />
+                    </div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:#4099ff;width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Twitter
+                    </div>
+                  </div>
+                </a>
+                -->
+                <div style="clear:both"></div>
+                </div>
+                <div class="col-sm-8">
+                <p>
+                  </p><form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#10003;"><input type="hidden" name="authenticity_token" value="d+Do0g4LucIK7PvuHQsY1HRtSt5yOq7l3npYh7WH97ejBUDEv4a7z+mha8hXirRx1yvCv1ZaNvllmYQx+e9LDQ=="><div><label for="user_login">Login</label><br><input autofocus="autofocus" type="text" name="user[login]" id="user_login"></div>
+                  <div><label for="user_password">Password</label><br><input type="password" name="user[password]" id="user_password"></div>
+                    <div><input name="user[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me"><label for="user_remember_me">Remember me</label></div>
+                  <button name="button" type="submit" class="action_btn action_btn_orange sign_in_btn pull-right">
+                      Sign In <i class="fa fa-sign-in"></i>
+</button>                  <div style="clear:both"></div>
+                  <div class="action_btn action_btn_orange forgot_pw_btn pull-right">
+                    <a href="new.html">I forgot my password</a>
+                  </div>
+</form>                
+              </div>
+            </div>
+          </div>
+
+
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    </div><!-- /.modal -->
+
+<style type="text/css">
+  .platform_icon{
+    height: 18px;
+    width: 18px;
+  }
+  .oppcity_null{
+    opacity: 0;
+  }
+  #user_login{
+    padding-left: 0;
+  }
+</style><div id="sign_up" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          </p><form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#10003;"><input type="hidden" name="authenticity_token" value="mNwqh6Zdcl9iPmLvaQWBj4JTRi7a9ea6WNUEQvHRy65MOYKRF9BwUoFz8skjhC0qIRXOT/6VfqbjNtj0vbl3FA=="><div><label for="user_username">Username</label><br><input autofocus="autofocus" type="text" name="user[username]" id="user_username"></div>
+            <div><label for="user_email">Email</label><br><input type="email" name="user[email]" id="user_email"></div>
+            <div><label for="user_password">Password</label><br><input type="password" name="user[password]" id="user_password"></div>
+            <div><label for="user_password_confirmation">Password confirmation</label><br><input type="password" name="user[password_confirmation]" id="user_password_confirmation"></div>
+            <input type="hidden" name="user[referral_code]" id="user_referral_code"><script src="js/recaptcha-api.js" async defer></script><div class="g-recaptcha " data-sitekey="6Lct8CsUAAAAAOodKEvS0RvMRImyEZmDs7RoiEqD"></div>
+          <noscript>
+            <div>
+              <div style="width: 302px; height: 422px; position: relative;">
+                <div style="width: 302px; height: 422px; position: absolute;">
+                  <iframe src="https://www.google.com/recaptcha/api/fallback?k=6Lct8CsUAAAAAOodKEvS0RvMRImyEZmDs7RoiEqD" frameborder="0" scrolling="no" style="width: 302px; height:422px; border-style: none;">
+                  </iframe>
+                </div>
+              </div>
+              <div style="width: 300px; height: 60px; border-style: none;
+                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                  margin: 10px 25px; padding: 0px; resize: none;" value=""></textarea></div>
+            </div>
+          </noscript>
+
+
+            <button name="button" type="submit" class="action_btn action_btn_orange sign_in_btn pull-right">
+              Sign up <i class="fa fa-user-plus"></i>
+</button>            <div style="clear:both"></div>
+</form>        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166343270-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166343270-1');
+</script><script type="text/javascript">
+    $(".send_form").on("click",function(){
+      $(".search_form").submit()
+    })
+    $(".choose_platform_small").bind( "clickoutside",function(event){
+      $(".platform_choose").addClass("hidden")
+    })
+    $(".choose_platform_small").on("click",function(){
+      $(".platform_choose").toggleClass("hidden")
+    })
+    $(".platform_choose li").on("click",function(){
+      $(".platform").html($(this).find("span").html())
+      $(".choose_platform_small .top_img").attr("src",$(this).find("img").attr("src")).removeClass("ps4 steam").addClass($(this).find("img").attr('class'))
+      $("#platform_id").val($(this).data("id"))
+    })
+    </script><script async src="js/2242--ads.js"></script><script type="text/javascript">
+          $(function (){
+            $(".mobile_click").on("click",function(e){
+              if(window.width() > 836){
+                e.preventDefault();
+              }
+            })
+            $(".toggle_history").on("click",function(){
+              $(".history_drop_down").toggleClass("active")
+            })
+            $('[data-toggle="tooltip"]').tooltip()
+
+              $(".modal").on("show.bs.modal",function(){
+                $(".modal").modal("hide")
+              })
+
+            $(".side_nav_trigger").on("click",function(){
+              $(".side-nav").toggleClass("right")
+            })
+            $(".alert-rails").addClass("ready")
+            nothing_to_hide = false
+            callo()
+          });
+          function createCookie(name,value,half_days) {
+              var expires = "";
+              if (half_days) {
+                  var date = new Date();
+                  date.setTime(date.getTime() + (half_days*12*60*60*1000));
+                  expires = "; expires=" + date.toUTCString();
+              }
+              document.cookie = name + "=" + value + expires + "; path=/";
+          }
+
+          function readCookie(name) {
+              var nameEQ = name + "=";
+              var ca = document.cookie.split(';');
+              for(var i=0;i < ca.length;i++) {
+                  var c = ca[i];
+                  while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                  if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+              }
+              return null;
+          }
+
+          function eraseCookie(name) {
+              createCookie(name,"",-1);
+          }
+          function callo(){
+            setTimeout(function(){
+                adBlock = false
+                if(document.getElementById('fatgEwevjsBm')){
+
+                } else {
+                  adBlock = true
+                  console.log("bad bad boy")
+                  $(".glory").remove()
+                  if (!readCookie("adblock")) {
+                    if($(".pfft").length >0){
+                      $(".pfft").modal()
+                      createCookie("adblock",true,1)
+                    }
+                  }
+                  $(".ad_block_warning").show()
+                }
+            },1000)
+          }
+        </script></body></html>

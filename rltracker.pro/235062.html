@@ -1,0 +1,1338 @@
+<!DOCTYPE HTML>
+<html lang="en" class="page"><head><meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-9860cf8290582bc0246","applicationID":"704586823","transactionName":"IgxeR0tXXwlVE0xGUgYGQxxMS1YXQw==","queueTime":0,"applicationTime":239,"agent":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-9860cf8290582bc0246",applicationID:"704586823"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script><title>Rocket League Stats | RLTracker.pro</title><link rel="icon" type="image/x-icon" href="favicons/1379--rl_favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" media="all" href="css/assets-application-d3f2c9fb3060b3454547947eeafb48493a6b51c8ca33ced8d782a5e9083d8389.css"><script src="js/assets-application-f963c1023591fbc15b07f3e0f9cabb17b08171f030f88dcd2c6c1b67d93dfdcb.js" data-turbolinks-track="true"></script><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="TTiQ8O0BgdyVPYqXvflmbqkhoN1MnraT+LKYkwwr6cXoP9GHtVDufqSbdv5RPV04Db8AX+kWA4mG2VFOYrNaIg=="><meta name="action-cable-url" content="/cable"><script type="text\/javascript" src="js/pagead%5C-show_ads.js">
+</script><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><meta name="description" content="Compare with Rocket League Players from all over the world and track your statistics live. Always up to date! Steam, Xbox and PS4!"><!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/style/css/ie8.css" media="all">
+<![endif]--><!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="/style/css/ie9.css" media="all">
+<![endif]--><script data-ad-client="ca-pub-3000815205397569" async src="js/js-adsbygoogle.js"></script><script async="async" src="js/js-gpt.js"></script><script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script><script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/21625989013/RLTracker.pro_HeaderSlot', [[728, 90], [320, 50]], 'div-gpt-ad-1502458562789-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/21625989013/RLTracker.pro_TopMPU', [[300, 600], [160, 600], [300, 250]], 'div-gpt-ad-1502457275792-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/21625989013/RLTracker.pro_FooterSlot', [[728, 90], [320, 50]], 'div-gpt-ad-1502458533707-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script></head><body class="" data-user-id="">
+      <div class="whole_wrapper">
+        <div class="container nav main_nav" style="z-index: 10000;">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-sm-3 col-xs-2" style="position: relative;z-index:1000">
+                  <a href="rltracker.html" class="pull-left">
+                    <img class="logo" alt="rocket-league-stats" src="images/assets-rl_logo-69351bcb9a7c88a286c1d11070e82f87553b08f08e95eadcae5dbd28e1b9adcc.png"><img class="logo_small" alt="rocket-league-stats" src="images/assets-logo-icon-rl-d72690c909b6b9826d9b9b3be57dd081dc05ac9b3b6bc99328a68c544fde6769.png"></a>
+                  
+                </div>
+                <div class="col-sm-7 col-xs-8">
+                  <ul class="nav_ul"><li><a href="users.html" class="look_up"><i class="fa fa-search" aria-hidden="true"></i><span class="remove_the_names lookup_remove"><span class="smaller_nav">Profile </span>Lookup</span></a></li>
+  <li><a href="trades.html"><i class="fa fa-exchange" aria-hidden="true"></i><span class="remove_the_names"><span class="smaller_nav">Item </span>Trading</span></a></li>
+  <li><a href="tier_breakdown.html"><i class="fa fa-line-chart" aria-hidden="true"></i><span class="remove_the_names"><span class="smaller_nav">Rank Tiers</span></span></a></li>
+  <li><a href="live_tracker.html"><i class="fa fa-terminal" aria-hidden="true"></i><span class="remove_the_names"><span class="smaller_nav">Live </span>Tracker</span></a></li>
+  <li><a href="prices.html"><i class="fa fa-key" aria-hidden="true"></i><span class="remove_the_names">Price<span class="remove_scam_name"> List</span></span></a></li>
+  <li><a href="https://discord.gg/JA99kXe" target="_BLANK"><i class="fa fa-trophy" aria-hidden="true"></i><span class="remove_the_names"><span class="move_five">Giveaway </span> </span></a></li>
+</ul><script type="text/javascript">
+$(document).ready(function(){
+  var overflowTimeout = null;
+  $(".close_search").on("click",function(){
+    clearTimeout(overflowTimeout);
+    $(".search_bar").removeClass("out_bitch").css("overflow", "hidden");
+  })
+  $(".whoops").off("click").on("click",function(){
+    $(".whoops_text").toggleClass("active")
+  })
+  $(".look_up").on("click",function(event){
+    event.preventDefault();
+    if(!$(".search_bar").hasClass("out_bitch")){
+      overflowTimeout = setTimeout(function () {
+        $(".search_bar").css("overflow", "visible");
+      }, 500);
+      clearTimeout(timer);
+      $(".search_form input").focus()
+      timeout = setTimeout(function(){
+        $(".search_bar").off("clickoutside").on("clickoutside" ,function(){
+          $(".search_bar").removeClass("out_bitch").css("overflow", "hidden");
+          $(".search_bar").off("clickoutside")
+          clearTimeout(timer);
+        })
+      },300)
+    }else{
+      clearTimeout(overflowTimeout);
+      $(".search_bar").off("clickoutside").css("overflow", "hidden");
+    }
+    $(".search_bar").toggleClass("out_bitch")
+  })
+})
+</script></div>
+                <div class="col-sm-2 nav_login" style="">
+                  <a href="sign_in.html">
+                    <div class="avatar_box pull-right " style="">
+                      <div class="status_nav online"></div>
+                    </div>
+                  </a>
+                  <div class="login_box pull-right">
+                      <a data-toggle="modal" class="login_login" href="#login">Login</a>
+                      <a data-toggle="modal" class="login_signup" href="#sign_up">Sign up</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container main_nav_sec">
+          <div class="row" style="position:relative">
+            <a class="patreon_href" href="premium.html">
+              <div class="patreon_overlay ">
+
+              </div>
+            </a>
+            <div class="col-xs-12 header search_bar" style="position:absolute;z-index:9995;">
+              <div class="lookup_form">
+  <form class="search_form" action="/profiles/lookup" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#10003;"><input type="hidden" name="authenticity_token" value="+JKL9BJN2N0GpDpGJC5vhpdDooRcOU8qEd2KZjaKUIldlcqDShy3fzcCxi/I6lTQM90CBvmx+jBvtkO7WBLjbg=="><div class="choose_platform_small">
+      <span class="platform">Steam</span> <img class="steam top_img" alt="steam-search" src="images/assets-steam-a6dd860ebcd5d4abe98e8c618879c4c5639cb289b14a7caf4fd2666c5b314c26.png"><i class="material-icons">arrow_drop_down</i>
+      <div class="platform_choose hidden">
+        <ul><li data-id="1"><span>Steam</span><img class="steam" alt="steam-search" src="images/assets-steam-a6dd860ebcd5d4abe98e8c618879c4c5639cb289b14a7caf4fd2666c5b314c26.png"></li>
+          <li data-id="2"><span>PS4</span><img class="ps4" alt="ps4-search" src="images/assets-PS4-031ca65889fb87bc5b11225a56564488c7b77efd16ace684eede6cb4d46b813b.png"></li>
+          <li data-id="3"><span>Xbox</span><img class="xbox" alt="xbox-search" src="images/assets-xbox-0de98a5cea4bd12f9e69ec0a0209a9d9f4f7753fd28c9cdfed582ae85a9005f2.png"></li>
+          <li data-id="4"><span>All</span><img class="all" alt="all_search" src="images/assets-all-388208c462edc7e5b24dc723b4f766ed6456f463e62c25342d105736102ea319.png"></li>
+        </ul></div>
+    </div>
+    <input type="text" name="account" id="account" class="nav_search" placeholder="Look up your stats - Enter your profile ID or vanity url!" autocomplete="off"><input type="hidden" name="platform_id" id="platform_id" value="1"><div class="send_form">&nbsp;<i class="material-icons">search</i></div>
+</form>
+  <style type="text/css">
+    .top_img.all{
+      height: 18px;
+      float: right;
+      margin-right: 10px;
+    }
+    li .all{
+      width: 25px!important;
+      margin-right:3px;
+    }
+  </style></div>
+
+              <i class="fa fa-times fa-4x pull-right close_search" style="cursor:pointer;position:absolute;top:-1px;right:5px"></i>
+            </div>
+            <div class="col-xs-12 header" style="position:relative;z-index: 9994;">
+              <div class="row">
+                <div class="col-sm-3 col-xs-2 history_wrapper" style="position: absolute;left: 0;top: 9px;">
+                  <div class="pull-left history_smaller_wrapper" style="padding:9px;position: absolute;width: 370px;">
+                      <span class="pull-left" style="margin-right:10px"><span class="smaller_history">Profile Search </span>History:</span>
+                      <ul class="history_drop_down pull-left"><a href="#">
+                            <span style="padding:3px;margin-right:5px;">Nothing found</span>
+                          </a>
+                      </ul><i class="material-icons pull-left toggle_history" style="padding: 0px 0px 0 14px;margin-left: -15px;">arrow_drop_down</i>
+                  </div>
+                </div>
+                <div class="col-sm-7 col-xs-8 col-xs-offset-2 col-sm-offset-3 second_nav_cont">
+                  <ul class="sec_nav_ul"><li><a href="scam_list.html"><i class="fa fa-exclamation" aria-hidden="true"></i><span class="last_text_hide">Scammer</span><span class="scammer_hide"> List</span></a></li>
+    <li class="first_drop_down_remove"><a href="discord.html"><img src="images/o-discord-dd39a41914dbef2652815352986228463eaef2feb0028d0794628f2c8b281fdc.png" style="height: 18px;width: auto;margin-right: 3px;margin-top: -2px;" alt="discord-bot"><span class="remove_bots">Discord </span>Bot</a></li>
+
+    <li class="second_drop_down_remove"><a href="premium.html"><i class="fa fa-star" aria-hidden="true"></i><span class="remove_the_names">Premium</span></a></li>
+</ul></div>
+              </div>
+              <h1 class="take_this_title_its_dangerous_out_there"></h1><p>hrnbey</p><div class="pull-right actions"></div>
+            </div>
+          </div>
+        </div>
+        <div class="container main-wrapper" style="">
+          <div class="row">
+            
+            
+            <div class="col-sm-10 col-sm-offset-1" id="rip_col" style="clear:both">
+                <div class="row" style="margin-top:20px">
+    <div class="col-sm-12 decide decide_104686">
+        <!-- ads.show_big_rl -->
+<script async src="js/js-adsbygoogle.js"></script><!-- Main Page --><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3000815205397569" data-ad-slot="6522934069" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+  </div>
+
+  <style type="text/css">
+    .decide{
+      text-align: center;
+      min-height:90px;
+    }
+  </style><div class="fav_no_category main_box main_stats_box" style="position: relative;">
+  <h4 class="fav_heading">hrnbey
+  </h4>
+  <div class="trade_menu">
+  <div class="">
+    <ul class="pull-left"><li><a style="border-right: 1px solid rgba(255,255,255,0.4);" class="menu_anchor " href="trades.html"><i class="fa fa-home"></i><span class="remove_trade_menu_span2">Home</span></a></li><!--
+      --><li><a style="border-right: 1px solid rgba(255,255,255,0.4);" class="menu_anchor " href="trades.html"><i class="fa fa-refresh"></i><span class="remove_trade_menu_span2">Auto refresh</span></a></li><!--
+      --><!--
+      --><li class="search_remove_menu"><a style="border-right: 1px solid rgba(255,255,255,0.4);" class="menu_anchor " href="search.html"><i class="fa fa-search" aria-hidden="true"></i><span class="remove_trade_menu_span2">Search</span><span class="remove_trade_menu_span"> Trade</span></a></li>
+    </ul><div class="clear_me"></div>
+    <ul class="pull-right remove_me"><li><a style="border-left: 1px solid rgba(255,255,255,0.4);" class="menu_anchor " href="new.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i>New<span class="remove_trade_menu_span"> Trade</span> </a></li>
+    </ul><ul class="pull-right add_me"></ul><div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(".chat_setting_btn").off("click").on("click",function(event){
+      event.preventDefault()
+      if($("#chat_settings").length == 0){
+        $.ajax({
+          url:"/chat/get_chat_settings",
+          success:function(data){
+            $("body").append(data)
+            $("#chat_settings").modal()
+            $('#chat_settings').on('hidden.bs.modal', function (e) {
+              $(this).remove()
+            })
+          }
+        })
+      }else{
+        $("#chat_settings").remove()
+        $(".modal-backdrop").remove()
+      }
+    })
+</script><style type="text/css">
+  .trade_menu i{
+    margin-right:8px;
+  }
+  .trade_menu{
+    background: rgb(57,57,57);
+    height: 40px;
+    margin: -20px -35px 0 -35px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .trade_menu ul li{
+    display: inline-block;
+  }
+  .trade_menu ul{
+    list-style: none;
+  }
+  .trade_menu a, .trade_menu a:active, .trade_menu a:visited, .trade_menu a:active, .trade_menu a:link{
+    color:white;
+    padding:10px;
+  }
+  .menu_anchor{
+    padding: 5px;
+    display: inline-block;
+  }
+  .chat_setting_btn{
+
+  }
+</style><div class="content_box">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-xs-2 user_show_img">
+          <img class="player_avatar_show " src="images/assets-default_avatar-f1098ef4a5e2d04b7b2595642d1ad4f1964e8dc1fb9e2697ce3f8d61928119dc.png" style="margin-top:10px;"><div data-id="235062" class="status online"></div>
+        </div>
+        <div class="col-xs-5">
+          <div class="row">
+            <div class="col-xs-4">
+              Nickname
+            </div>
+            <div class="col-xs-8">
+              hrnbey<span class="status_icon online"></span>
+            </div>
+            <div class="col-xs-4">
+              Player
+            </div>
+            <div class="col-xs-8">
+                You have to be logged in to see this information
+            </div>
+            <div class="col-xs-4">
+              Discord
+            </div>
+            <div class="col-xs-8">
+                None
+            </div>
+            <div class="col-xs-4">
+              Sign up
+            </div>
+            <div class="col-xs-8">
+              2020-10-26
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-5">
+          <div class="col-xs-4">
+            Reputation
+          </div>
+          <div class="col-xs-8">
+              +0 | -0
+          </div>
+        </div>
+        <div class="col-xs-5">
+          <div class="col-xs-4">
+            Offers
+          </div>
+          <div class="col-xs-8">
+            6
+          </div>
+        </div>
+        <div class="col-xs-5">
+          <div class="col-xs-4">
+            Requests
+          </div>
+          <div class="col-xs-8">
+            5
+          </div>
+        </div>
+        <div class="col-xs-5">
+          <div class="col-xs-4">
+            Inventory
+          </div>
+          <div class="col-xs-8">
+              Inventory is Empty
+          </div>
+        </div>
+      </div>
+      <div>
+
+      <div class="col-xs-12" style="margin-top:20px">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs user-tabs" role="tablist"><li role="presentation" class="active"><a href="#trades" class="trade_tab" aria-controls="trades" role="tab" data-toggle="tab">Trades</a></li>
+          <li role="presentation"><a href="#reps" aria-controls="reps" role="tab" data-toggle="tab">Reputation</a></li>
+          <!--<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>-->
+        </ul><!-- Tab panes --><div class="tab-content">
+
+         <div role="tabpanel" class="tab-pane active" id="trades">
+           <div style="clear:both"></div>
+<div class="trades_partial">
+    <div class="pull-left paginate_header" style="margin-left: 15px;"></div><br><div class="single_trade_wrapper not_prem">
+                <div class="col-xs-12 whole_trade_wrapper" data-id="2415723" style="margin-bottom:15px;padding-bottom: 10px;">
+          <div class="background" style="position:relative;background: #555;border-top-right-radius: 3px;border-top-left-radius: 3px;border-bottom: 1px solid grey;padding-bottom:10px;">
+            <div class="background_fake" style="width:100%;background:#2e2e2e;border-top-right-radius: 3px;border-top-left-radius: 3px;position: absolute;top:0;left:0;height:45px;z-index:0;border-bottom: 1px solid grey;">
+
+            </div>
+            <div class="trade_wrapper pull-left">
+              <div class="left_trade pull-left">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Has <img class="pull-right" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="blueprint">
+                      <div class="item no-select-bruh" data-id="2022" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2022/0-269e801be0abe81d967d3a6685dbb53c7273c77e9b65f1fe7756dcd692a5fabb.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Blueprint</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="2022.html" class="hidden">Blueprint</a>
+                        <a href="2022.html" class="hidden">Blueprint</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="fennec">
+                      <div class="item no-select-bruh" data-id="1929" data-cat="2" data-rarity="6" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1929/0-58a18283a8ef20e1dde4d6379acaa1fdd5ee5d1674a8745a9dd15a62e749903f.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Fennec</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1929.html" class="hidden">Fennec</a>
+                        <a href="1929.html" class="hidden">Fennec</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div class="right_trade pull-right">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Wants <img class="pull-left" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="credits offers">
+                      <div class="item no-select-bruh" data-id="2061" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2061/0-86058eb15b256256ea1054600fa5c32d50617127694ca3da26a71721dcb40fcb.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Credits Offers</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="2061.html" class="hidden">Credits Offers</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div style="clear:both"></div>
+            </div>
+            <div class="pull-right user_summary" style="text-align:left;padding-left:30px;">
+              <h5 style="margin-left: -1px;margin-top:0;position: relative;z-index: 1;background:#2e2e2e">
+                <a href="235062.html">hrnbey </a>
+                <span style=""><span class="status_icon online"></span></span> <time datetime="2020-10-27T18:35:46Z" data-local="time" data-format="%B %e, %Y %l:%M%P">October 27, 2020  6:35pm</time><div class="clear_me_later"></div>
+                    <a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a>
+                    <div class="pull-right spacer" style="padding-right:10px"> | </div>
+                  <a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2415723">Share</a>
+                  <div class="pull-right spacer spacer1" style="padding-right:10px"> | </div>
+                  <a class="pull-right" data-id="235062" href="https://discord.gg/JcTZmCT" style="padding-right: 10px;">Middleman</a>
+                  <ul class="mobile_ul pull-right"><li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs" aria-hidden="true"></i>Actions</a>
+                      <ul class="dropdown-menu"><li><a class="pull-right" data-id="235062" href="https://discord.gg/JcTZmCT">Middleman</a></li>
+                            <li><a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a></li>
+                            <li><div class="pull-right spacer" style="padding-right:10px"> | </div></li>
+                          <li><a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2415723">Share</a></li>
+                      </ul></li>
+                  </ul></h5>
+
+              <div class="row" style="margin-right: 0;">
+                <div class="col-lg-12 the_text">
+                  <div>
+                    
+                      <u class="pull-left">Steam Profile: </u>&nbsp;
+                      
+                      <a href="https://steamcommunity.com/profiles/76561198796581768/" target="_BLANK">hrnbey158 </a>
+                    <div style="clear:both"></div>
+                      Fennec Blueprint ! steam id : hrnbey158 offer,let's talk
+                       <a href="2415723.html" class="show_detail_trade" style="position: absolute;top: 0;right: 20px;">Show Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="clear:both"></div> 
+          </div>
+        </div>
+
+                <div class="col-xs-12 whole_trade_wrapper" data-id="2415720" style="margin-bottom:15px;padding-bottom: 10px;">
+          <div class="background" style="position:relative;background: #555;border-top-right-radius: 3px;border-top-left-radius: 3px;border-bottom: 1px solid grey;padding-bottom:10px;">
+            <div class="background_fake" style="width:100%;background:#2e2e2e;border-top-right-radius: 3px;border-top-left-radius: 3px;position: absolute;top:0;left:0;height:45px;z-index:0;border-bottom: 1px solid grey;">
+
+            </div>
+            <div class="trade_wrapper pull-left">
+              <div class="left_trade pull-left">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Has <img class="pull-right" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="mantis">
+                      <div class="item no-select-bruh" data-id="261" data-cat="2" data-rarity="6" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/261/6-02b49b71dab3ed86e15d475f8a4be4d5c81db07a8835538f0094ab9f78e97dbc.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Mantis</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color">Grey</span><span class="mobile_color">Grey</span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="261.html" class="hidden">Mantis</a>
+                        <a href="261.html" class="hidden">Mantis</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div class="right_trade pull-right">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Wants <img class="pull-left" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="credits offers">
+                      <div class="item no-select-bruh" data-id="2061" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2061/0-86058eb15b256256ea1054600fa5c32d50617127694ca3da26a71721dcb40fcb.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Credits Offers</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="2061.html" class="hidden">Credits Offers</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div style="clear:both"></div>
+            </div>
+            <div class="pull-right user_summary" style="text-align:left;padding-left:30px;">
+              <h5 style="margin-left: -1px;margin-top:0;position: relative;z-index: 1;background:#2e2e2e">
+                <a href="235062.html">hrnbey </a>
+                <span style=""><span class="status_icon online"></span></span> <time datetime="2020-10-27T18:30:19Z" data-local="time" data-format="%B %e, %Y %l:%M%P">October 27, 2020  6:30pm</time><div class="clear_me_later"></div>
+                    <a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a>
+                    <div class="pull-right spacer" style="padding-right:10px"> | </div>
+                  <a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2415720">Share</a>
+                  <div class="pull-right spacer spacer1" style="padding-right:10px"> | </div>
+                  <a class="pull-right" data-id="235062" href="https://discord.gg/JcTZmCT" style="padding-right: 10px;">Middleman</a>
+                  <ul class="mobile_ul pull-right"><li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs" aria-hidden="true"></i>Actions</a>
+                      <ul class="dropdown-menu"><li><a class="pull-right" data-id="235062" href="https://discord.gg/JcTZmCT">Middleman</a></li>
+                            <li><a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a></li>
+                            <li><div class="pull-right spacer" style="padding-right:10px"> | </div></li>
+                          <li><a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2415720">Share</a></li>
+                      </ul></li>
+                  </ul></h5>
+
+              <div class="row" style="margin-right: 0;">
+                <div class="col-lg-12 the_text">
+                  <div>
+                    
+                      <u class="pull-left">Steam Profile: </u>&nbsp;
+                      
+                      <a href="https://steamcommunity.com/profiles/76561198796581768/" target="_BLANK">hrnbey158 </a>
+                    <div style="clear:both"></div>
+                      offer , let's talk steam id :hrnbey158
+                       <a href="2415720.html" class="show_detail_trade" style="position: absolute;top: 0;right: 20px;">Show Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="clear:both"></div> 
+          </div>
+        </div>
+
+                <div class="col-xs-12 whole_trade_wrapper" data-id="2415702" style="margin-bottom:15px;padding-bottom: 10px;">
+          <div class="background" style="position:relative;background: #555;border-top-right-radius: 3px;border-top-left-radius: 3px;border-bottom: 1px solid grey;padding-bottom:10px;">
+            <div class="background_fake" style="width:100%;background:#2e2e2e;border-top-right-radius: 3px;border-top-left-radius: 3px;position: absolute;top:0;left:0;height:45px;z-index:0;border-bottom: 1px solid grey;">
+
+            </div>
+            <div class="trade_wrapper pull-left">
+              <div class="left_trade pull-left">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Has <img class="pull-right" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="mainliner">
+                      <div class="item no-select-bruh" data-id="1869" data-cat="4" data-rarity="8" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1869/7-ce6e6083c8b51f16a316ebd2a5ebebe726be5e574d1010691f5ad08b19366908.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Mainliner</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color">Lime</span><span class="mobile_color">Lime</span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1869.html" class="hidden">Mainliner</a>
+                        <a href="1869.html" class="hidden">Mainliner</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div class="right_trade pull-right">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Wants <img class="pull-left" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="credits">
+                      <div class="item no-select-bruh" data-id="2021" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2021/0-11c91e80ded9d83373ee45d0018ebc5eb5be399f9aec37a68589551cfe795889.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Credits</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                          <span class="inline_amount" style="background:rgba(102, 102, 102, 0.6);">50</span>
+                        <a href="2021.html" class="hidden">Credits</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div style="clear:both"></div>
+            </div>
+            <div class="pull-right user_summary" style="text-align:left;padding-left:30px;">
+              <h5 style="margin-left: -1px;margin-top:0;position: relative;z-index: 1;background:#2e2e2e">
+                <a href="235062.html">hrnbey </a>
+                <span style=""><span class="status_icon online"></span></span> <time datetime="2020-10-27T09:05:05Z" data-local="time" data-format="%B %e, %Y %l:%M%P">October 27, 2020  9:05am</time><div class="clear_me_later"></div>
+                    <a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a>
+                    <div class="pull-right spacer" style="padding-right:10px"> | </div>
+                  <a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2415702">Share</a>
+                  <div class="pull-right spacer spacer1" style="padding-right:10px"> | </div>
+                  <a class="pull-right" data-id="235062" href="https://discord.gg/JcTZmCT" style="padding-right: 10px;">Middleman</a>
+                  <ul class="mobile_ul pull-right"><li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs" aria-hidden="true"></i>Actions</a>
+                      <ul class="dropdown-menu"><li><a class="pull-right" data-id="235062" href="https://discord.gg/JcTZmCT">Middleman</a></li>
+                            <li><a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a></li>
+                            <li><div class="pull-right spacer" style="padding-right:10px"> | </div></li>
+                          <li><a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2415702">Share</a></li>
+                      </ul></li>
+                  </ul></h5>
+
+              <div class="row" style="margin-right: 0;">
+                <div class="col-lg-12 the_text">
+                  <div>
+                    
+                      <u class="pull-left">Steam Profile: </u>&nbsp;
+                      
+                      <a href="https://steamcommunity.com/profiles/76561198796581768/" target="_BLANK">hrnbey158 </a>
+                    <div style="clear:both"></div>
+                      
+                       <a href="2415702.html" class="show_detail_trade" style="position: absolute;top: 0;right: 20px;">Show Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="clear:both"></div> 
+          </div>
+        </div>
+
+                <div class="col-xs-12 whole_trade_wrapper" data-id="2415691" style="margin-bottom:15px;padding-bottom: 10px;">
+          <div class="background" style="position:relative;background: #555;border-top-right-radius: 3px;border-top-left-radius: 3px;border-bottom: 1px solid grey;padding-bottom:10px;">
+            <div class="background_fake" style="width:100%;background:#2e2e2e;border-top-right-radius: 3px;border-top-left-radius: 3px;position: absolute;top:0;left:0;height:45px;z-index:0;border-bottom: 1px solid grey;">
+
+            </div>
+            <div class="trade_wrapper pull-left">
+              <div class="left_trade pull-left">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Has <img class="pull-right" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="x-devil mk2">
+                      <div class="item no-select-bruh" data-id="2" data-cat="2" data-rarity="6" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2/0-cb220d7663389c9e70b56ce570bd8078d825e4919cbabe033f09a80ec2b96278.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">X-Devil Mk2</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="2.html" class="hidden">X-Devil Mk2</a>
+                        <a href="2.html" class="hidden">X-Devil Mk2</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div class="right_trade pull-right">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Wants <img class="pull-left" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="credits">
+                      <div class="item no-select-bruh" data-id="2021" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2021/0-11c91e80ded9d83373ee45d0018ebc5eb5be399f9aec37a68589551cfe795889.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Credits</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="2021.html" class="hidden">Credits</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div style="clear:both"></div>
+            </div>
+            <div class="pull-right user_summary" style="text-align:left;padding-left:30px;">
+              <h5 style="margin-left: -1px;margin-top:0;position: relative;z-index: 1;background:#2e2e2e">
+                <a href="235062.html">hrnbey </a>
+                <span style=""><span class="status_icon online"></span></span> <time datetime="2020-10-26T19:33:43Z" data-local="time" data-format="%B %e, %Y %l:%M%P">October 26, 2020  7:33pm</time><div class="clear_me_later"></div>
+                    <a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a>
+                    <div class="pull-right spacer" style="padding-right:10px"> | </div>
+                  <a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2415691">Share</a>
+                  <div class="pull-right spacer spacer1" style="padding-right:10px"> | </div>
+                  <a class="pull-right" data-id="235062" href="https://discord.gg/JcTZmCT" style="padding-right: 10px;">Middleman</a>
+                  <ul class="mobile_ul pull-right"><li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs" aria-hidden="true"></i>Actions</a>
+                      <ul class="dropdown-menu"><li><a class="pull-right" data-id="235062" href="https://discord.gg/JcTZmCT">Middleman</a></li>
+                            <li><a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a></li>
+                            <li><div class="pull-right spacer" style="padding-right:10px"> | </div></li>
+                          <li><a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2415691">Share</a></li>
+                      </ul></li>
+                  </ul></h5>
+
+              <div class="row" style="margin-right: 0;">
+                <div class="col-lg-12 the_text">
+                  <div>
+                    
+                      <u class="pull-left">Steam Profile: </u>&nbsp;
+                      
+                      <a href="https://steamcommunity.com/profiles/76561198796581768/" target="_BLANK">hrnbey158 </a>
+                    <div style="clear:both"></div>
+                      50 credits steam id:hrnbey158 
+                       <a href="2415691.html" class="show_detail_trade" style="position: absolute;top: 0;right: 20px;">Show Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="clear:both"></div> 
+          </div>
+        </div>
+
+  </div>
+    <div class="pull-left paginate_header" style="margin-left:15px"></div>
+</div>
+
+
+<script type="text/javascript">
+  function bind_trade(){
+    $(".delete_click").off("click").on("click",function(e){
+      if(!confirm("Please be aware that you can't create 2 similiar trades on the same day") == true){
+        return false;
+      }
+    })
+
+    $(".delete_click_2").off("click").on("click",function(e){
+      if(confirm("Please be aware that you can't create 2 similiar trades on the same day") == true){
+        id = $(this).data("id")
+        $.ajax({
+          url:"/trades/delete_ajax",
+          method:"post",
+          data:{id},
+          success: function(){
+            $(".whole_trade_wrapper[data-id='"+ id +"']").remove()
+          }
+        })
+      }
+      return false;
+    })
+    $(".expand").off("click").on("click",function(e){
+      e.preventDefault()
+      $(this).closest(".the_text").css("max-height","500000px")
+    })
+    $(".auto_bump span").off("click").on("click",function(){
+      $(this).closest(".auto_bump").find("input").trigger("click")
+    })
+    $('.share_button').off("click").on('click', function (e) {
+      e.preventDefault();
+      $('#share_modal').modal()
+      id = $(this).data("id")
+      $("#share_modal Input").val("https://rltracker.pro/trades_img/"+id+".png")
+      setTimeout(function(){
+        $(".twitter_div").html('<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="I created a Trade on https://rltracker.pro/trades_img/'+id+'.png" data-url="https://rltracker.pro/trades/'+id+'" data-via="rltracker" data-related="rltracker,rltracker" data-show-count="false">Tweet<script async src="//platform.twitter.com/widgets.js" charset="utf-8"><\/script>')
+      },300)
+      $(".fb_link").html('<div class="fb-share-button" data-href="https://rltracker.pro/trades/'+id+'" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Frltracker.pro%2Ftrades%2F'+id+'&amp;src=sdkpreparse">Teilen</script></div>')
+    })
+    $('.report_btn').off("click").on('click', function (e) {
+      e.preventDefault();
+      $(".report_text").val("")
+      $('#report_modal').modal()
+      id = $(this).data("id")
+      $("#report_modal Input.trade_id").val(id)
+      $("#report_modal Input.user_id").val()
+    })
+    $(".auto_bump input").off("change").on("change",function(){
+        alert("This is a premium only feature :)")
+    })
+    $(".bump_trade").off("click").on("click",function(e){
+      e.preventDefault()
+      id = $(this).data("id")
+      if(confirm("Bumping your Trade will cost 10 Trackerpoints!") == true){
+        $.ajax({
+          url:"/trades/bump",
+          data:{id: id},
+          success:function(data){
+            if(data["answer"] == "success"){
+              window.location.reload()
+            }else if(data["answer"] == "early"){
+              render_alert("You have to wait 1 hour between bumps", "alert");
+            }else if(data["answer"] == "queued"){
+              render_alert("Your Trade is already queued for bumping. Please be patient", "alert");
+            }else if(data["answer"] == "Nope" ){
+              render_alert("You dont have enough Trackerpoints", "alert");
+            }
+          }
+        })
+      }else{
+      }
+    })
+  }
+  bind_trade()
+  $(document).ready(function(){
+    $.ajax({
+      url:"/trades/get_rest",
+      data:{"ids": [2415686], "report":"false"},
+      success: function(data){
+        $(".single_trade_wrapper.not_prem").append(data)
+        bind_trade()
+        resize_user()
+      }
+    })
+
+  })
+
+
+<style type="text/css">
+.items_wrapper.premium{
+  
+}
+.auto_bump{
+  margin-right: 10px;
+  font-size: 16px;
+  position: relative;
+  top: -1px;
+}
+.user_summary time{
+  font-size: 11px;
+  position: relative;
+  top: -2px;
+}
+h4.premium{
+  background:#435b91 !important;
+}
+a,a:active,a:visited,a:hover{
+  color:rgb(230,111,51);
+}
+.pagination .page a,.pagination .first a,.pagination .prev a,.pagination .next a,.pagination .last a{
+  padding: 10px;
+  background:rgb(68,68,68);
+  border: 1px solid rgb(46,46,46);
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  margin-right: -5px;
+  cursor: pointer;
+}
+.pagination .first a,.pagination .prev a,.pagination .next a,.pagination .last a{
+  width: 65px;
+  height: 40px;
+}
+.pagination .page.current,.pagination .page.gap{
+  padding: 10px;
+  color:rgb(230,111,51);
+  background:rgb(46,46,46);
+  border: 1px solid rgb(46,46,46);
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  margin-right: -5px;
+  cursor: pointer;
+}
+
+.pagination .page a:hover,.pagination .first a:hover,.pagination .prev a:hover,.pagination .next a:hover,.pagination .last a:hover {
+  background:rgb(46,46,46);
+}
+.pagination .page.gap{
+  background: rgb(68,68,68);
+}
+</style><div class="modal fade" tabindex="-1" id="share_modal" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Share this Trade</h4>
+      </div>
+      <div class="modal-body">
+        <p>Twitter</p>
+        <div class="twitter_div"></div>
+        <p>Facebook</p>
+        <p><a class="fb_link" target="blank" href="users.html">Share on Facebook</a></p>
+        <p>Image link</p>
+        <p><input style="width:100%;color:black"></p>
+        <p>Discord</p>
+        <p>Coming soon</p>
+        <p>Reddit</p>
+        <p>Coming soon</p>
+      </div>
+      <div class="modal-footer">
+        <div class="action_btn action_btn_orange pull-right" style="padding:5px 30px;color:white" data-dismiss="modal">
+          Close
+        </div>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" id="report_modal" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Report this Trade</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger">
+          <center><strong>REPORTING SOMEONE WITHOUT SUFFICIENT PROOF COULD GET YOU BANNED</strong><br></center>
+          We are accepting reports for:
+          <ul style="margin-left: 15px;"><li>Distributing Discord Links or Spam links</li>
+            <li>Mention of duping or other exploits/hacks in the trade</li>
+            <li>Scamming (<strong>ONLY WITH VIDEO PROOF</strong>)</li>
+            <li>Wrong Steam Url in Trade Description</li>
+          </ul></div>
+        <input class="trade_id hidden" type="" name="trade_id"><div>Description:</div>
+        <textarea class="report_text" type="text" name="text" style="width:100%;height:150px"></textarea></div>
+      <div class="modal-footer">
+        <div class="action_btn action_btn_orange pull-right" style="padding:5px 30px;color:white" data-dismiss="modal">
+          Close
+        </div>
+        <div class="action_btn action_btn_orange pull-right send_report" style="padding:5px 30px;color:white" data-dismiss="modal">
+          Send Report
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div class="modal fade" tabindex="-1" id="rep_modal" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Rep this User</h4>
+      </div>
+      <div class="modal-body">
+          <div class="alert alert-danger">
+            <strong>To add reps you have to </strong><br><ul style="margin-left: 15px;"><li>be registered for at least 3 months</li>
+              <li>added less than 6 reps today</li>
+            </ul></div>
+      </div>
+      <div class="modal-footer">
+        <div class="action_btn action_btn_orange pull-right" style="padding:5px 30px;color:white" data-dismiss="modal">
+          Close
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.rep_btn').on('click', function (e) {
+      e.preventDefault();
+      $(".rep_text").val("")
+      $('#rep_modal').modal()
+      id = $(this).data("id")
+      $("#rep_modal Input.user_id").val(id)
+    })
+    $(".send_report").on("click",function(){
+      $.ajax({
+        url:"/trades/report",
+        data:{trade_id: $("#report_modal .trade_id").val(),text:$("#report_modal .report_text").val()},
+        success: function(){
+          alert("Report successfully sent!")
+        }
+      })
+    })
+    $(".send_rep").on("click",function(){
+      $.ajax({
+        url:"/trades/add_rep",
+        data:{id: $("#rep_modal .user_id").val(), text: $("#rep_modal .rep_text").val(), rep: $("#rep_modal .gimme_rep").val()},
+        success: function(data){
+          answer = data["answer"]
+          alert(answer)
+        }
+      })
+    })
+  })
+</script><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.7&appId=829526853729336";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script><script type="text/javascript">
+
+  jQuery(document).ready(function($) {
+    resize_user()
+  });
+
+  $(window).on("resize",function(){
+    resize_user()
+  })
+
+</script><script type="text/javascript">
+  $(".item").on("click",function(e){
+    search_id = $(this).data("id")
+    $(".search_box").remove()
+
+    $("body").append("<div data-id='"+search_id+"'class='search_box' style='position:absolute;left:"+e.pageX+"px;top:"+e.pageY+"px;background:#666;z-index:9999999;'><div style='padding:10px;''>"+$(this).find(".name").html()+"</script></div><hr style="margin:0"><div><a style="padding:10px" href="%22+search_id+%22.html">Search for offer</a></div><div><a style="padding:10px" href="%22+search_id+%22.html">Search for request</a></div><div><a style="padding:10px" href="%22+search_id+%22.html">Search in Inventories</a></div><div><a style="padding:10px" href="%22+search_id+%22.html">Search in Price Sheet</a></div></div>")
+
+    setTimeout(function(){
+
+      $(".search_box").bind( "clickoutside",function(event){
+          $(".search_box").remove()
+      })
+    },300)
+  })
+
+
+
+        </div>
+          <div role="tabpanel" class="tab-pane" id="reps">
+            <table class="table"><thead><th></th>
+                <th>Feedback</th>
+              </thead><tbody><tr><td colspan="2">Found none</td>
+                </tr></tbody></table></div>
+
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+  $(".glory.mod_founds").on("click",function(){
+      $.ajax({
+        url:"/giveaway/found/mod_found",
+        data: {"whey": true},
+        success: function(data){
+          $(".glory.mod_founds").remove()
+          if(data["id"] != null){
+            pop_entry(1, data["overall"], [data["id"]])
+            $(".ticket_count").html(data["overall"])
+          }
+        }
+      })
+      return false;
+    })
+  $('.user-tabs a').click(function (e) {
+    e.preventDefault()
+    if($(this).hasClass("trade_tab")){
+      setTimeout(function(){
+        resize_user()
+      },200)
+    }
+    $(this).tab('show')
+    history.pushState({}, '', 'https://rltracker.pro/users/235062?tab='+$(this).attr("aria-controls"));
+  })
+  $(".expand").on("click",function(e){
+    e.preventDefault()
+    $(this).closest(".the_text").css("max-height","500000px")
+  })
+  jQuery(document).ready(function($) {
+    resize_user()
+  });
+
+  $(window).on("resize",function(){
+    resize_user()
+  })
+</script><script type="text/javascript">
+  $(".item").on("click",function(e){
+    search_id = $(this).data("id")
+    $(".search_box").remove()
+
+    $("body").append("<div data-id='"+search_id+"'class='search_box' style='position:absolute;left:"+e.pageX+"px;top:"+e.pageY+"px;background:#666;z-index:9999999;'><div style='padding:10px;''>"+$(this).find(".name").html()+"</script></div><hr style="margin:0"><div><a style="padding:10px" href="%22+search_id+%22.html">Search for offer</a></div><div><a style="padding:10px" href="%22+search_id+%22.html">Search for request</a></div><div><a style="padding:10px" href="%22+search_id+%22.html">Search in Inventories</a></div><div><a style="padding:10px" href="%22+search_id+%22.html">Search in Price Sheet</a></div></div>")
+
+    setTimeout(function(){
+
+      $(".search_box").bind( "clickoutside",function(event){
+          $(".search_box").remove()
+      })
+    },300)
+  })
+
+
+<style type="text/css">
+  .popover{
+    min-width:250px;
+  }
+  .trade_menu{
+    margin: -10px 0px 0;
+  }
+  .attr_span{
+    padding:5px;
+    border-radius:5px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .status_icon{
+    padding:5px;
+    background: red;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 4px;
+    top: 11px;
+    border: 1px solid #00000055;
+  }
+  .status_icon.idle{
+    background:orange;
+  }
+  .status_icon.online{
+    background:green;
+  }
+</style><div id="login" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Sign In</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4" style="color:white;border-right:solid grey 1px">
+                <div>Authorize with</div>
+                <a href="steam.html" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:#212121;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="images/platforms-steam-e99c23c41d76d5d13868ea532e815d7fd6696771c263d4336d20346ed4875858.png" alt="Steam"></div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:#212121;width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Steam
+                    </div>
+                  </div>
+                </a>
+
+                <div style="clear:both"></div>
+                <a href="auth.html" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:rgb(115,137,214);margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="images/platforms-discordlogo-d2efe994cc89b53fc4dd401333563ae3415ca94bf079f3b8e883f9474e117f2b.png" alt="Discordlogo"></div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:rgb(115,137,214);width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Discord
+                    </div>
+                  </div>
+                </a>
+                <div style="clear:both"></div>
+                <a href="twitch.html" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:#551A8B;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="images/platforms-twitch-29f8c7a3f8bbdd4b0a505606ccce947e297ea2755c886d7f1da6536ae099dc6d.png" alt="Twitch"></div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:#551A8B;width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Twitch
+                    </div>
+                  </div>
+                </a>
+                <div style="clear:both"></div>
+                <a href="reddit.html" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:#ff4500;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="images/platforms-reddit-a461f8f751951f040460f37f322f61e6f7a14402326b4a6e78174a13e17fe423.png" alt="Reddit"></div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:#ff4500;width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Reddit
+                    </div>
+                  </div>
+                </a>
+                <!--
+                <div style="clear:both"></div>
+                <a href="/auth/twitter" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:#4099ff;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="/assets/platforms/twitre-28ce324412abd4ce8b78e5af59cc5e0f7699653f6b2624e0e4c4e7911916d9b6.png" alt="Twitre" />
+                    </div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:#4099ff;width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Twitter
+                    </div>
+                  </div>
+                </a>
+                -->
+                <div style="clear:both"></div>
+                </div>
+                <div class="col-sm-8">
+                <p>
+                  </p><form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#10003;"><input type="hidden" name="authenticity_token" value="ew0heRIPkmlozp3Jc3u3AVE6PdrRRQJQebWw7Jp8d2zeCmAOSl79y1loYaCfv4xX9aSdWHTNt0oH3nkx9OTEiw=="><div><label for="user_login">Login</label><br><input autofocus="autofocus" type="text" name="user[login]" id="user_login"></div>
+                  <div><label for="user_password">Password</label><br><input type="password" name="user[password]" id="user_password"></div>
+                    <div><input name="user[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me"><label for="user_remember_me">Remember me</label></div>
+                  <button name="button" type="submit" class="action_btn action_btn_orange sign_in_btn pull-right">
+                      Sign In <i class="fa fa-sign-in"></i>
+</button>                  <div style="clear:both"></div>
+                  <div class="action_btn action_btn_orange forgot_pw_btn pull-right">
+                    <a href="new.html">I forgot my password</a>
+                  </div>
+</form>                
+              </div>
+            </div>
+          </div>
+
+
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    </div><!-- /.modal -->
+
+<style type="text/css">
+  .platform_icon{
+    height: 18px;
+    width: 18px;
+  }
+  .oppcity_null{
+    opacity: 0;
+  }
+  #user_login{
+    padding-left: 0;
+  }
+</style><div id="sign_up" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          </p><form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#10003;"><input type="hidden" name="authenticity_token" value="SXjP88hciN2CUtaBnDff/A9bkpy4TXRKCuYU0MYNcIDsf46EkA3nf7P0Kuhw8+Sqq8UyHh3FwVB0jd0NqJXDZw=="><div><label for="user_username">Username</label><br><input autofocus="autofocus" type="text" name="user[username]" id="user_username"></div>
+            <div><label for="user_email">Email</label><br><input type="email" name="user[email]" id="user_email"></div>
+            <div><label for="user_password">Password</label><br><input type="password" name="user[password]" id="user_password"></div>
+            <div><label for="user_password_confirmation">Password confirmation</label><br><input type="password" name="user[password_confirmation]" id="user_password_confirmation"></div>
+            <input type="hidden" name="user[referral_code]" id="user_referral_code"><script src="js/recaptcha-api.js" async defer></script><div class="g-recaptcha " data-sitekey="6Lct8CsUAAAAAOodKEvS0RvMRImyEZmDs7RoiEqD"></div>
+          <noscript>
+            <div>
+              <div style="width: 302px; height: 422px; position: relative;">
+                <div style="width: 302px; height: 422px; position: absolute;">
+                  <iframe src="https://www.google.com/recaptcha/api/fallback?k=6Lct8CsUAAAAAOodKEvS0RvMRImyEZmDs7RoiEqD" frameborder="0" scrolling="no" style="width: 302px; height:422px; border-style: none;">
+                  </iframe>
+                </div>
+              </div>
+              <div style="width: 300px; height: 60px; border-style: none;
+                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                  margin: 10px 25px; padding: 0px; resize: none;" value=""></textarea></div>
+            </div>
+          </noscript>
+
+
+            <button name="button" type="submit" class="action_btn action_btn_orange sign_in_btn pull-right">
+              Sign up <i class="fa fa-user-plus"></i>
+</button>            <div style="clear:both"></div>
+</form>        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166343270-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166343270-1');
+</script><script type="text/javascript">
+    $(".send_form").on("click",function(){
+      $(".search_form").submit()
+    })
+    $(".choose_platform_small").bind( "clickoutside",function(event){
+      $(".platform_choose").addClass("hidden")
+    })
+    $(".choose_platform_small").on("click",function(){
+      $(".platform_choose").toggleClass("hidden")
+    })
+    $(".platform_choose li").on("click",function(){
+      $(".platform").html($(this).find("span").html())
+      $(".choose_platform_small .top_img").attr("src",$(this).find("img").attr("src")).removeClass("ps4 steam").addClass($(this).find("img").attr('class'))
+      $("#platform_id").val($(this).data("id"))
+    })
+    </script><script async src="js/7458--ads.js"></script><script type="text/javascript">
+          $(function (){
+            $(".mobile_click").on("click",function(e){
+              if(window.width() > 836){
+                e.preventDefault();
+              }
+            })
+            $(".toggle_history").on("click",function(){
+              $(".history_drop_down").toggleClass("active")
+            })
+            $('[data-toggle="tooltip"]').tooltip()
+
+              $(".modal").on("show.bs.modal",function(){
+                $(".modal").modal("hide")
+              })
+
+            $(".side_nav_trigger").on("click",function(){
+              $(".side-nav").toggleClass("right")
+            })
+            $(".alert-rails").addClass("ready")
+            nothing_to_hide = false
+            callo()
+          });
+          function createCookie(name,value,half_days) {
+              var expires = "";
+              if (half_days) {
+                  var date = new Date();
+                  date.setTime(date.getTime() + (half_days*12*60*60*1000));
+                  expires = "; expires=" + date.toUTCString();
+              }
+              document.cookie = name + "=" + value + expires + "; path=/";
+          }
+
+          function readCookie(name) {
+              var nameEQ = name + "=";
+              var ca = document.cookie.split(';');
+              for(var i=0;i < ca.length;i++) {
+                  var c = ca[i];
+                  while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                  if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+              }
+              return null;
+          }
+
+          function eraseCookie(name) {
+              createCookie(name,"",-1);
+          }
+          function callo(){
+            setTimeout(function(){
+                adBlock = false
+                if(document.getElementById('fatgEwevjsBm')){
+
+                } else {
+                  adBlock = true
+                  console.log("bad bad boy")
+                  $(".glory").remove()
+                  if (!readCookie("adblock")) {
+                    if($(".pfft").length >0){
+                      $(".pfft").modal()
+                      createCookie("adblock",true,1)
+                    }
+                  }
+                  $(".ad_block_warning").show()
+                }
+            },1000)
+          }
+        </script></body></html>

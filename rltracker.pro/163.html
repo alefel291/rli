@@ -1,0 +1,1823 @@
+<!DOCTYPE HTML>
+<html lang="en" class="page"><head><meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-9860cf8290582bc0246","applicationID":"704586823","transactionName":"IgxeR0tXXwlVE0xCQQAHVUAWS1YEQgILaVcEF1FaVQ==","queueTime":0,"applicationTime":418,"agent":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-9860cf8290582bc0246",applicationID:"704586823"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script><title>Discotheque Trading Requests | RLTracker.pro</title><link rel="icon" type="image/x-icon" href="favicons/9391--rl_favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" media="all" href="css/assets-application-d3f2c9fb3060b3454547947eeafb48493a6b51c8ca33ced8d782a5e9083d8389.css"><script src="js/assets-application-f963c1023591fbc15b07f3e0f9cabb17b08171f030f88dcd2c6c1b67d93dfdcb.js" data-turbolinks-track="true"></script><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="zDvBoObtUpGNcnjUh8QZhWrrCdSr4pVdUxi52mnXbLibcSbs7PkwsX0rmoB2z7DcVYZQRZ9k7QFTRxYmKHdmGA=="><meta name="action-cable-url" content="/cable"><script type="text\/javascript" src="js/pagead%5C-show_ads.js">
+</script><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><meta name="description" content="Find great deals on our quick and simple Trading system for Discotheque. Trade and get all the Rocket League items you ever wanted. It's free!"><!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/style/css/ie8.css" media="all">
+<![endif]--><!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="/style/css/ie9.css" media="all">
+<![endif]--><script data-ad-client="ca-pub-3000815205397569" async src="js/js-adsbygoogle.js"></script><script async="async" src="js/js-gpt.js"></script><script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script><script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/21625989013/RLTracker.pro_HeaderSlot', [[728, 90], [320, 50]], 'div-gpt-ad-1502458562789-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/21625989013/RLTracker.pro_TopMPU', [[300, 600], [160, 600], [300, 250]], 'div-gpt-ad-1502457275792-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/21625989013/RLTracker.pro_FooterSlot', [[728, 90], [320, 50]], 'div-gpt-ad-1502458533707-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script></head><body class="" data-user-id="">
+      <div class="whole_wrapper">
+        <div class="container nav main_nav" style="z-index: 10000;">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-sm-3 col-xs-2" style="position: relative;z-index:1000">
+                  <a href="rltracker.html" class="pull-left">
+                    <img class="logo" alt="rocket-league-stats" src="images/assets-rl_logo-69351bcb9a7c88a286c1d11070e82f87553b08f08e95eadcae5dbd28e1b9adcc.png"><img class="logo_small" alt="rocket-league-stats" src="images/assets-logo-icon-rl-d72690c909b6b9826d9b9b3be57dd081dc05ac9b3b6bc99328a68c544fde6769.png"></a>
+                  
+                </div>
+                <div class="col-sm-7 col-xs-8">
+                  <ul class="nav_ul"><li><a href="request.html" class="look_up"><i class="fa fa-search" aria-hidden="true"></i><span class="remove_the_names lookup_remove"><span class="smaller_nav">Profile </span>Lookup</span></a></li>
+  <li><a href="trades.html"><i class="fa fa-exchange" aria-hidden="true"></i><span class="remove_the_names"><span class="smaller_nav">Item </span>Trading</span></a></li>
+  <li><a href="tier_breakdown.html"><i class="fa fa-line-chart" aria-hidden="true"></i><span class="remove_the_names"><span class="smaller_nav">Rank Tiers</span></span></a></li>
+  <li><a href="live_tracker.html"><i class="fa fa-terminal" aria-hidden="true"></i><span class="remove_the_names"><span class="smaller_nav">Live </span>Tracker</span></a></li>
+  <li><a href="prices.html"><i class="fa fa-key" aria-hidden="true"></i><span class="remove_the_names">Price<span class="remove_scam_name"> List</span></span></a></li>
+  <li><a href="https://discord.gg/JA99kXe" target="_BLANK"><i class="fa fa-trophy" aria-hidden="true"></i><span class="remove_the_names"><span class="move_five">Giveaway </span> </span></a></li>
+</ul><script type="text/javascript">
+$(document).ready(function(){
+  var overflowTimeout = null;
+  $(".close_search").on("click",function(){
+    clearTimeout(overflowTimeout);
+    $(".search_bar").removeClass("out_bitch").css("overflow", "hidden");
+  })
+  $(".whoops").off("click").on("click",function(){
+    $(".whoops_text").toggleClass("active")
+  })
+  $(".look_up").on("click",function(event){
+    event.preventDefault();
+    if(!$(".search_bar").hasClass("out_bitch")){
+      overflowTimeout = setTimeout(function () {
+        $(".search_bar").css("overflow", "visible");
+      }, 500);
+      clearTimeout(timer);
+      $(".search_form input").focus()
+      timeout = setTimeout(function(){
+        $(".search_bar").off("clickoutside").on("clickoutside" ,function(){
+          $(".search_bar").removeClass("out_bitch").css("overflow", "hidden");
+          $(".search_bar").off("clickoutside")
+          clearTimeout(timer);
+        })
+      },300)
+    }else{
+      clearTimeout(overflowTimeout);
+      $(".search_bar").off("clickoutside").css("overflow", "hidden");
+    }
+    $(".search_bar").toggleClass("out_bitch")
+  })
+})
+</script></div>
+                <div class="col-sm-2 nav_login" style="">
+                  <a href="sign_in.html">
+                    <div class="avatar_box pull-right " style="">
+                      <div class="status_nav online"></div>
+                    </div>
+                  </a>
+                  <div class="login_box pull-right">
+                      <a data-toggle="modal" class="login_login" href="#login">Login</a>
+                      <a data-toggle="modal" class="login_signup" href="#sign_up">Sign up</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container main_nav_sec">
+          <div class="row" style="position:relative">
+            <a class="patreon_href" href="premium.html">
+              <div class="patreon_overlay ">
+
+              </div>
+            </a>
+            <div class="col-xs-12 header search_bar" style="position:absolute;z-index:9995;">
+              <div class="lookup_form">
+  <form class="search_form" action="/profiles/lookup" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#10003;"><input type="hidden" name="authenticity_token" value="C56nEGQuDS7K9IpiGaQQmfGt1/GL4dOEQfpnBfhOdSBc1EBcbjpvDjqtaDbor7nAzsCOYL9nq9hBpcj5ue5/gA=="><div class="choose_platform_small">
+      <span class="platform">Steam</span> <img class="steam top_img" alt="steam-search" src="images/assets-steam-a6dd860ebcd5d4abe98e8c618879c4c5639cb289b14a7caf4fd2666c5b314c26.png"><i class="material-icons">arrow_drop_down</i>
+      <div class="platform_choose hidden">
+        <ul><li data-id="1"><span>Steam</span><img class="steam" alt="steam-search" src="images/assets-steam-a6dd860ebcd5d4abe98e8c618879c4c5639cb289b14a7caf4fd2666c5b314c26.png"></li>
+          <li data-id="2"><span>PS4</span><img class="ps4" alt="ps4-search" src="images/assets-PS4-031ca65889fb87bc5b11225a56564488c7b77efd16ace684eede6cb4d46b813b.png"></li>
+          <li data-id="3"><span>Xbox</span><img class="xbox" alt="xbox-search" src="images/assets-xbox-0de98a5cea4bd12f9e69ec0a0209a9d9f4f7753fd28c9cdfed582ae85a9005f2.png"></li>
+          <li data-id="4"><span>All</span><img class="all" alt="all_search" src="images/assets-all-388208c462edc7e5b24dc723b4f766ed6456f463e62c25342d105736102ea319.png"></li>
+        </ul></div>
+    </div>
+    <input type="text" name="account" id="account" class="nav_search" placeholder="Look up your stats - Enter your profile ID or vanity url!" autocomplete="off"><input type="hidden" name="platform_id" id="platform_id" value="1"><div class="send_form">&nbsp;<i class="material-icons">search</i></div>
+</form>
+  <style type="text/css">
+    .top_img.all{
+      height: 18px;
+      float: right;
+      margin-right: 10px;
+    }
+    li .all{
+      width: 25px!important;
+      margin-right:3px;
+    }
+  </style></div>
+
+              <i class="fa fa-times fa-4x pull-right close_search" style="cursor:pointer;position:absolute;top:-1px;right:5px"></i>
+            </div>
+            <div class="col-xs-12 header" style="position:relative;z-index: 9994;">
+              <div class="row">
+                <div class="col-sm-3 col-xs-2 history_wrapper" style="position: absolute;left: 0;top: 9px;">
+                  <div class="pull-left history_smaller_wrapper" style="padding:9px;position: absolute;width: 370px;">
+                      <span class="pull-left" style="margin-right:10px"><span class="smaller_history">Profile Search </span>History:</span>
+                      <ul class="history_drop_down pull-left"><a href="#">
+                            <span style="padding:3px;margin-right:5px;">Nothing found</span>
+                          </a>
+                      </ul><i class="material-icons pull-left toggle_history" style="padding: 0px 0px 0 14px;margin-left: -15px;">arrow_drop_down</i>
+                  </div>
+                </div>
+                <div class="col-sm-7 col-xs-8 col-xs-offset-2 col-sm-offset-3 second_nav_cont">
+                  <ul class="sec_nav_ul"><li><a href="scam_list.html"><i class="fa fa-exclamation" aria-hidden="true"></i><span class="last_text_hide">Scammer</span><span class="scammer_hide"> List</span></a></li>
+    <li class="first_drop_down_remove"><a href="discord.html"><img src="images/o-discord-dd39a41914dbef2652815352986228463eaef2feb0028d0794628f2c8b281fdc.png" style="height: 18px;width: auto;margin-right: 3px;margin-top: -2px;" alt="discord-bot"><span class="remove_bots">Discord </span>Bot</a></li>
+
+    <li class="second_drop_down_remove"><a href="premium.html"><i class="fa fa-star" aria-hidden="true"></i><span class="remove_the_names">Premium</span></a></li>
+</ul></div>
+              </div>
+              <h1 class="take_this_title_its_dangerous_out_there"></h1><p>Trades </p><div class="pull-right actions"></div>
+            </div>
+          </div>
+        </div>
+        <div class="container main-wrapper" style="">
+          <div class="row">
+            
+            
+            <div class="col-sm-10 col-sm-offset-1" id="rip_col" style="clear:both">
+                <div class="row" style="margin-top:20px">
+    <div class="col-sm-12 decide decide_800111">
+        <!-- ads.show_big_rl -->
+<script async src="js/js-adsbygoogle.js"></script><!-- Main Page --><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3000815205397569" data-ad-slot="6522934069" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+  </div>
+
+  <style type="text/css">
+    .decide{
+      text-align: center;
+      min-height:90px;
+    }
+  </style><div class="items fav_no_category main_box main_stats_box" style="position: relative;">
+  <h4 class="fav_heading">Last Trades </h4>
+  <div class="content_box">
+    <div class="container fix_me">
+      <div class="trade_menu">
+  <div class="">
+    <ul class="pull-left"><li><a style="border-right: 1px solid rgba(255,255,255,0.4);" class="menu_anchor " href="trades.html"><i class="fa fa-home"></i><span class="remove_trade_menu_span2">Home</span></a></li><!--
+      --><li><a style="border-right: 1px solid rgba(255,255,255,0.4);" class="menu_anchor " href="trades.html"><i class="fa fa-refresh"></i><span class="remove_trade_menu_span2">Auto refresh</span></a></li><!--
+      --><!--
+      --><li class="search_remove_menu"><a style="border-right: 1px solid rgba(255,255,255,0.4);" class="menu_anchor active" href="search.html"><i class="fa fa-search" aria-hidden="true"></i><span class="remove_trade_menu_span2">Search</span><span class="remove_trade_menu_span"> Trade</span></a></li>
+    </ul><div class="clear_me"></div>
+    <ul class="pull-right remove_me"><li><a style="border-left: 1px solid rgba(255,255,255,0.4);" class="menu_anchor " href="new.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i>New<span class="remove_trade_menu_span"> Trade</span> </a></li>
+    </ul><ul class="pull-right add_me"></ul><div style="clear: both"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(".chat_setting_btn").off("click").on("click",function(event){
+      event.preventDefault()
+      if($("#chat_settings").length == 0){
+        $.ajax({
+          url:"/chat/get_chat_settings",
+          success:function(data){
+            $("body").append(data)
+            $("#chat_settings").modal()
+            $('#chat_settings').on('hidden.bs.modal', function (e) {
+              $(this).remove()
+            })
+          }
+        })
+      }else{
+        $("#chat_settings").remove()
+        $(".modal-backdrop").remove()
+      }
+    })
+</script><style type="text/css">
+  .trade_menu i{
+    margin-right:8px;
+  }
+  .trade_menu{
+    background: rgb(57,57,57);
+    height: 40px;
+    margin: -20px -35px 0 -35px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .trade_menu ul li{
+    display: inline-block;
+  }
+  .trade_menu ul{
+    list-style: none;
+  }
+  .trade_menu a, .trade_menu a:active, .trade_menu a:visited, .trade_menu a:active, .trade_menu a:link{
+    color:white;
+    padding:10px;
+  }
+  .menu_anchor{
+    padding: 5px;
+    display: inline-block;
+  }
+  .chat_setting_btn{
+
+  }
+</style><div class="row simple_search">
+  <div class="col-xs-12">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-lg-5 item_search">
+        Item
+        <select name="inv_item[inv_item_id]" id="inv_item_inv_item_id"><option value=""></option><option value="2095"> Breakout: Watermelon </option><option value="1807"> Pickle</option><option value="1812"> Super Manga-Bolt III</option><option value="248">20xx</option><option value="1873">Abducted</option><option value="1357">Accelerator Crate</option><option value="1748">Aero Mage</option><option value="1515">Aether</option><option value="1649">Aftershock: Tiger Tiger</option><option value="1801">Alarm Clock</option><option value="186">Alchemist</option><option value="7">Alien</option><option value="187">Almas</option><option value="1890">Aloha</option><option value="2142">Alpinist</option><option value="1474">Angel Wings</option><option value="285">Animus GP</option><option value="1457">Animus GP: Odd Fish</option><option value="1644">Animus gp: Peacock</option><option value="1541">Animus GP: Rose King</option><option value="1460">Anodized</option><option value="1925">Anodized Pearl</option><option value="9">Antlers</option><option value="160">Any Offers</option><option value="273">Apex</option><option value="1993">Apparatus</option><option value="2001">Apparatus: Inverted</option><option value="217">ARA-51</option><option value="1780">Arachnophobia</option><option value="1606">Arachnotenna</option><option value="1791">Artemis GXT</option><option value="1845">Asik</option><option value="1853">Asik: Infinite</option><option value="175">Asterias</option><option value="1554">Atomizer</option><option value="1972">Automaton</option><option value="1973">Automaton: Inverted</option><option value="2017">Autumn</option><option value="1945">Avant-Garde</option><option value="1381">Ball King</option><option value="1507">Balla-carr&agrave;</option><option value="1513">Ballistic</option><option value="12">Balloon Dog</option><option value="13">Baseball Cap [B]</option><option value="14">Baseball Cap [F]</option><option value="1882">Battle Axe</option><option value="1586">Battle-Cars Anniversary</option><option value="1614">Battle-Cars Anniversary</option><option value="1597">Beach Party</option><option value="1435">Beaten egg</option><option value="1942">Bell</option><option value="15">Beret</option><option value="1941">Big Checker</option><option value="1998">Big Splash</option><option value="8">Biker Cap</option><option value="1662">Binary</option><option value="215">Biomass</option><option value="1587">Birthday Bash</option><option value="1615">Birthday Bash</option><option value="17">Birthday Cake</option><option value="2062">BKR</option><option value="254">Black Market Offers</option><option value="2114">Blade Wave</option><option value="2115">Blade Wave: Inverted</option><option value="1525">Blast Ray</option><option value="296">Blazer</option><option value="1924">Blender</option><option value="18">Blitzen</option><option value="1676">Blueprint</option><option value="2022">Blueprint</option><option value="1891">Blueprint II</option><option value="1764">Bob's Ramen</option><option value="19">Bobby Helmet</option><option value="199">Bone King</option><option value="1635">Boo-ya!</option><option value="20">Bowler</option><option value="306">Breakout</option><option value="1753">Breakout - CRL Western</option><option value="1872">Breakout - Easter Bunny</option><option value="164">Breakout Type-S</option><option value="222">Breakout Type-S: Distortion</option><option value="224">Breakout Type-S: Funny Book</option><option value="1354">Breakout Type-S: MOBO</option><option value="281">Breakout Type-S: RLCS</option><option value="1456">Breakout Type-S: Smore'd</option><option value="2097">Breakout Type-S: Zero-Sum</option><option value="1634">Breakout: 9 Lives</option><option value="1664">Breakout: Astaroth</option><option value="1728">Breakout: Bobcat</option><option value="1967">Breakout: Bomb Out</option><option value="1636">Breakout: BOO!</option><option value="1361">Breakout: Chainsaw</option><option value="207">Breakout: Distortion</option><option value="53">Breakout: Dot Matrix</option><option value="1527">Breakout: Egged</option><option value="177">Breakout: Falchion</option><option value="1517">Breakout: Froggy</option><option value="1782">Breakout: Ghost Fever</option><option value="234">Breakout: Heiwa</option><option value="78">Breakout: Junk Food</option><option value="2094">Breakout: Lycan</option><option value="2129">Breakout: Mammoth</option><option value="1736">Breakout: Nice Shot</option><option value="1825">Breakout: Nisse </option><option value="1484">Breakout: Rad Reindeer</option><option value="1766">Breakout: Ripped Comic</option><option value="280">Breakout: RLCS</option><option value="124">Breakout: Shibuya</option><option value="168">Breakout: Snakeskin</option><option value="1647">Breakout: Sneaky Slither</option><option value="2078">Breakout: Snow Devil</option><option value="1443">Breakout: Stitches</option><option value="1838">Breakout: Taniwha</option><option value="178">Breakout: Turbo</option><option value="2071">Breakout: TV Time</option><option value="242">Breakout: Vector</option><option value="145">Breakout: Vice</option><option value="1744">Breakout: What A Save!</option><option value="2110">Breakout: Yaojing</option><option value="1911">Brick Phone</option><option value="22">Brodie Helmet</option><option value="23">Brunnehilde</option><option value="1607">Bubble Wand</option><option value="272">Bubbly</option><option value="232">Bunny Ears</option><option value="1413">Burlap</option><option value="1563">Burnout</option><option value="1538">Butterflies</option><option value="1427">Butterfly</option><option value="1616">Buzzer</option><option value="1434">Bycocket</option><option value="24">Calavera</option><option value="1405">Calculated</option><option value="1382">Call Sign RL</option><option value="1802">Camera</option><option value="1677">Camo</option><option value="1980">Camo</option><option value="1981">Camo: Inverted</option><option value="2008">Camp Know Where</option><option value="1713">Campaign Hat</option><option value="25">Candle</option><option value="26">Candy Cane</option><option value="1485">Candy Cane</option><option value="27">Candy Corn</option><option value="1779">Candy Jack</option><option value="1695">Capacitor I</option><option value="1696">Capacitor II</option><option value="1697">Capacitor III</option><option value="1698">Capacitor IV</option><option value="28">Captain's Hat</option><option value="2171">Carbon</option><option value="30">Carriage</option><option value="1916">Cassette</option><option value="1377">Catfish</option><option value="42">Cattleman</option><option value="1451">Cauldron</option><option value="2130">Caution Waves</option><option value="2102">Celebration Kite</option><option value="1855">Celestial II</option><option value="284">Centio V17</option><option value="1362">Centio V17: Gigapede</option><option value="1540">Centio V17: Machina</option><option value="1529">Centio V17: Pollinator</option><option value="1558">Centio V17: Splashback</option><option value="1569">Centro</option><option value="1399">Chafed Cherry</option><option value="32">Chainsaw</option><option value="33">Chakram</option><option value="1509">Chameleon</option><option value="34">Champion Series I Crate</option><option value="35">Champion Series II Crate</option><option value="180">Champion Series III Crate</option><option value="214">Champion Series IV Crate</option><option value="1946">Checkered Flag</option><option value="2143">Checkmate</option><option value="36">Chef's Hat</option><option value="37">Cherry Top</option><option value="38">Chick Magnet</option><option value="2023">Chikara GXT</option><option value="1829">Christmas Cocoa</option><option value="39">Christmas Tree</option><option value="1490">Christmas Wreath</option><option value="1370">Chrono</option><option value="299">Circuit Board</option><option value="1654">Circuit Board</option><option value="1567">Cirrus</option><option value="176">Clamshell</option><option value="1371">Clockwork</option><option value="1986">Clodhopper</option><option value="1705">Cloudburst I</option><option value="1706">Cloudburst II</option><option value="1707">Cloudburst III</option><option value="2183">CNTCT-1</option><option value="2184">CNTCT-1: Infinite</option><option value="40">Cockroach</option><option value="1900">Cold Fusion</option><option value="1479">Cold Sweater</option><option value="1480">Cold Sweater</option><option value="1974">Collateral</option><option value="1550">Comet</option><option value="2126">Compound C</option><option value="1415">Cookie Dough</option><option value="2088">Crabby</option><option value="158">Crate Offers</option><option value="2021">Credits</option><option value="2061">Credits Offers</option><option value="1995">Creeper</option><option value="1348">Cromulon</option><option value="1899">Crown</option><option value="1599">Cruxe</option><option value="1436">Cuckoo Clock</option><option value="43">Cupcake</option><option value="2204">Cupcake Wheels</option><option value="2087">Cupid</option><option value="1714">Cutlass</option><option value="2181">Cutter</option><option value="2182">Cutter: Inverted</option><option value="2116">Cyberware</option><option value="1655">Cyclone</option><option value="1819">Daemon-Kelpie</option><option value="1898">Damaged</option><option value="1608">Dandelion Seed</option><option value="165">Dark Matter</option><option value="311">Datastream</option><option value="1393">Dead Serious</option><option value="45">Deadmau5</option><option value="1895">Decenium</option><option value="2172">Decopunk</option><option value="46">Deerstalker</option><option value="2010">Demogorgon</option><option value="1776">Demon Disc</option><option value="1383">Dendritic</option><option value="47">Derby</option><option value="48">Devil Horns</option><option value="188">Dieci</option><option value="1846">Diestro</option><option value="1922">Diestro: Rico</option><option value="2029">Dimonix</option><option value="2038">Dimonix: Inverted</option><option value="1760">Dino</option><option value="1546">Diomedes</option><option value="49">Disco Ball</option><option value="163">Discotheque</option><option value="1765">Discotheque-Trail</option><option value="1553">Dissolver</option><option value="1617">Dizzy Birds</option><option value="1756">Dominus - CRL Eastern</option><option value="1755">Dominus - CRL Southern</option><option value="51">Dominus GT</option><option value="1526">Dominus GT: Callous Bros.</option><option value="229">Dominus GT: Distortion</option><option value="1539">Dominus GT: NNTR</option><option value="278">Dominus GT: RLCS</option><option value="1360">Dominus GT: Splatter</option><option value="1557">Dominus GT: Staredown</option><option value="227">Dominus GT: Unmasked</option><option value="1444">Dominus: Afterlife</option><option value="2079">Dominus: Arboreal Nightmare </option><option value="11">Dominus: Arcana</option><option value="2013">Dominus: Candy Monster</option><option value="1666">Dominus: Dot Matrix</option><option value="1518">Dominus: Fantasmo</option><option value="1952">Dominus: Funky Medusa</option><option value="1499">Dominus: Funny Book</option><option value="1483">Dominus: Holiday Deco</option><option value="1352">Dominus: MDGA</option><option value="1920">Dominus: Mixtape</option><option value="179">Dominus: Mondo</option><option value="1966">Dominus: Nightmare Fuel</option><option value="1984">Dominus: Or-Aise</option><option value="104">Dominus: Pollo Caliente</option><option value="1645">Dominus: Proptosis</option><option value="279">Dominus: RLCS</option><option value="6">Dominus: Royalty</option><option value="1739">Dominus: Savage</option><option value="126">Dominus: Snakeskin</option><option value="2174">Dominus: Stratum Badge</option><option value="237">Dominus: Suji</option><option value="1743">Dominus: Templar</option><option value="2194">Dominus: Vector</option><option value="1950">Dominus: Whitewash</option><option value="1827">Dominus: Winter Waddle</option><option value="2111">Dominus: Yaojing</option><option value="52">Donut</option><option value="1532">Doughnut</option><option value="1537">Doughnut Eater</option><option value="270">Draco</option><option value="1391">Dragon Wings</option><option value="1835">Dreidel</option><option value="55">Drink Helmet</option><option value="1774">Drip Drop</option><option value="1976">DRN</option><option value="1977">DRN: Infinite</option><option value="1811">Drone III</option><option value="1468">Dueling Dragons</option><option value="2127">Dune-Sweeper</option><option value="1962">Dust Cloud</option><option value="1656">Dynamo</option><option value="1907">E.T.</option><option value="231">Easter Basket</option><option value="230">Easter Egg</option><option value="1906">Ectoplasm </option><option value="2044">Ectoplasm</option><option value="2050">Efflux</option><option value="1547">EKG-OMG</option><option value="2149">Electro-Mag</option><option value="293">Electroshock</option><option value="1757">Elevation</option><option value="1901">Emerald</option><option value="2036">Emerald PRO</option><option value="1566">Enchanter</option><option value="244">Endo</option><option value="266">Endo: MG-88</option><option value="1458">Endo: Mummified</option><option value="1478">Endo: Polar Force</option><option value="1350">Endo: Spatter</option><option value="1524">EQ</option><option value="1466">Equalizer</option><option value="253">Exotic Offers</option><option value="189">Falco</option><option value="2176">Fallen Angel</option><option value="1473">Fallen Tree</option><option value="2191">Fannec: Hardline</option><option value="1394">Feather</option><option value="1929">Fennec</option><option value="1987">Fennec: Edge Burst</option><option value="2192">Fennec: Huntress</option><option value="2161">Fennec: Ombre</option><option value="2175">Fennec: Yorebands</option><option value="1959">Fenrir II</option><option value="1836">Ferocity</option><option value="56">Fez</option><option value="288">FGSP</option><option value="1954">Fiber Optic II</option><option value="1897">Fighter Junk</option><option value="1767">Finny</option><option value="1570">Fire God</option><option value="57">Fire Helmet</option><option value="1893">Fire Main</option><option value="264">Fireplug</option><option value="294">Fireworks</option><option value="1831">Fireworks-Boost</option><option value="1876">Fireworks-Decal</option><option value="1618">Fishbowl</option><option value="2166">Flamerate</option><option value="312">Flamethrower</option><option value="2052">Flash Freeze</option><option value="2089">Flat Cap</option><option value="2152">Floppy</option><option value="1943">Floppy Disk</option><option value="2058">Floppy Fish</option><option value="1437">Flower - Daisy</option><option value="1438">Flower - Orchid</option><option value="1417">Flower - Tulip</option><option value="1938">Flower-Lotus</option><option value="1957">Flowers-Trail</option><option value="59">Foam Finger</option><option value="60">Foam Hat</option><option value="1879">Force Razor II</option><option value="2113">Fortune </option><option value="1888">Fortune Fan</option><option value="1465">Fractal Fire</option><option value="1726">Free Ride</option><option value="297">Friction</option><option value="61">Frostbite</option><option value="2202">Frosted Cake Avatar</option><option value="2201">Frosted Cake Banner</option><option value="1834">Frostline</option><option value="62">Fruit Hat</option><option value="211">FSL</option><option value="2027">FSL-B</option><option value="247">Furry</option><option value="290">Fusion</option><option value="1800">Future Shock</option><option value="63">Fuzzy Brute</option><option value="198">Fuzzy Skull</option><option value="64">Fuzzy Vamp</option><option value="1365">Gaiden</option><option value="1856">Galvan</option><option value="1857">Galvan: Holographic</option><option value="1787">Gamer Pad</option><option value="1619">Gargoyle</option><option value="1422">Gearlock</option><option value="1858">Generator II</option><option value="65">Genie Lamp</option><option value="1536">Geo Soul</option><option value="2047">Germophile</option><option value="1770">Gernot</option><option value="1620">GG the Clown</option><option value="200">Ghost</option><option value="1784">Ghost Story</option><option value="1908">Ghostbusters</option><option value="1440">Giant Panda</option><option value="2080">Gift Storm</option><option value="2073">Gingerbread House </option><option value="2131">Gizmo: Hive Mind</option><option value="205">Gizmo: Mean Streak</option><option value="2153">Glaive</option><option value="2154">Glaive: Inverted</option><option value="2132">Glimmerslag II</option><option value="1847">Glitch</option><option value="1997">Glorifier</option><option value="300">Glossy Block</option><option value="1723">Go-Kart</option><option value="66">Gold Cap</option><option value="1">Gold Nugget</option><option value="67">Gold Rush</option><option value="1789">Gold-Plated</option><option value="1584">Golden Egg</option><option value="2188">Golden Egg 20</option><option value="1909">Golden Egg 2019</option><option value="1826">Golden Gift</option><option value="1775">Golden Pumpkin</option><option value="2009">Golden Pumpkin '19</option><option value="1622">Goldfish</option><option value="68">Goldstone</option><option value="1926">Goop</option><option value="70">Graduation Cap</option><option value="2185">Grappler</option><option value="1623">Grave Robber</option><option value="1716">Great White</option><option value="1447">Grimalkin</option><option value="1820">Gripstride HX</option><option value="1823">Gripstride Inverted</option><option value="1880">Guardian GXT</option><option value="2002">Gyre</option><option value="1881">Hack Swerve III</option><option value="1594">Hallowtide</option><option value="71">Halo</option><option value="1884">Hammerhead</option><option value="1491">Happy Holidays</option><option value="2075">Happy Holidays Avatar</option><option value="2072">Happy New Year Topper</option><option value="1472">Happy Penguin</option><option value="72">Hard Hat</option><option value="181">Harpoon</option><option value="1837">Hat Trick</option><option value="1453">Haunted Hallows Crate</option><option value="1778">Haunted House</option><option value="2014">Hawaiian Hopper</option><option value="1430">Hawaiian Lei</option><option value="1428">Heart Glases</option><option value="73">Hearts</option><option value="1384">Hearts</option><option value="130">Heatwave</option><option value="2028">Helicoprion</option><option value="275">Helios</option><option value="301">Hellfire</option><option value="1493">Helper Elf</option><option value="2140">Hex Fade</option><option value="1851">Hex Tide</option><option value="218">Hexed</option><option value="267">Hexphase</option><option value="2098">Hibiscus</option><option value="1467">Hikari P5</option><option value="1464">Hiro</option><option value="2179">HNY</option><option value="2180">HNY: Inverted</option><option value="1678">Hoagie</option><option value="1475">Holiday Bow</option><option value="74">Holiday Gift</option><option value="1832">Holiday Hearth</option><option value="1476">Holiday Stocking</option><option value="2133">Holodata - Boost</option><option value="2135">Holodata - GE</option><option value="2138">Holodata - Trail</option><option value="2040">Holosphere</option><option value="75">Homburg</option><option value="2146">Hornet</option><option value="1429">Hot dog</option><option value="1364">Hot Rocks</option><option value="1750">Hot Rod</option><option value="1431">Hotcakes</option><option value="204">Hotshot: Hi-Tech</option><option value="1894">Hoverboard</option><option value="1588">Howler</option><option value="76">Hula Girl</option><option value="1734">Humble Pie</option><option value="277">Hustle Brows</option><option value="1970">Hydro Paint</option><option value="166">Hypernova</option><option value="1552">Hypnotik</option><option value="1589">Ice Pop</option><option value="1534">Illuminata</option><option value="1556">Impact Crate</option><option value="1463">Imperator DT5</option><option value="1496">Imperator DT5: Mosher</option><option value="1559">Imperator DT5: Windswept</option><option value="252">Import Offers</option><option value="1506">Infinium</option><option value="2150">Initializer</option><option value="184">Ink</option><option value="2178">Interstellar</option><option value="1850">Intrudium</option><option value="190">Invader</option><option value="2156">IO</option><option value="2157">IO: Infinite</option><option value="313">Ion</option><option value="1978">Irradiator</option><option value="1979">Irradiator: Inverted</option><option value="69">Ivy Cap</option><option value="1420">Jack-in-the-box</option><option value="1367">Jager 619 RS</option><option value="1528">J&auml;ger 619 RS: Hip-Hop</option><option value="1497">J&auml;ger 619 RS: Mister Monsoon</option><option value="1740">Jager 619 rs: Shark Tooth</option><option value="1366">Jager 619 RS: Snakeskin</option><option value="1669">Jager 619 rs: StarLighter</option><option value="1542">Jager 619 RS: XVI</option><option value="2117">Jandertek</option><option value="2118">Jandertek: Holorgraphic</option><option value="1842">Jayvyn</option><option value="1717">Jolt Bangle I</option><option value="1718">Jolt Bangle II</option><option value="1719">Jolt Bangle III</option><option value="2207">Jolted</option><option value="1804">Juice Box</option><option value="1572">Juiced</option><option value="1389">Junk Food</option><option value="271">K2 - Wheels</option><option value="2060">Kablooey</option><option value="1530">Kaleidoscope</option><option value="246">Kalos</option><option value="1624">Kayak</option><option value="2099">Kaze</option><option value="157">Key</option><option value="159">Key Offers</option><option value="2090">Kitten Cup</option><option value="2067">Knight Rider</option><option value="1414">Knitted Yarn</option><option value="1609">Koinobori</option><option value="2167">Komodo</option><option value="2162">Komodo: Takeover</option><option value="1928">Krackle</option><option value="1549">Kyrios</option><option value="79">Labyrinth</option><option value="2106">Lantern Fest</option><option value="1685">Laser Wave I</option><option value="1686">Laser Wave II</option><option value="1687">Laser Wave III</option><option value="1418">Latte</option><option value="2007">Leaf Litter</option><option value="2018">Leafstream</option><option value="1642">Leviathan</option><option value="1752">LFT</option><option value="1657">Libertine</option><option value="1545">Lift-Off</option><option value="80">Light Bulb</option><option value="81">Lightning</option><option value="1363">Lightning</option><option value="219">Lightning Yellow</option><option value="298">Lightspeed</option><option value="257">Limited Offers</option><option value="21">Little Bow</option><option value="1426">Little Bunny</option><option value="1425">Little Cow</option><option value="1416">Little Dog</option><option value="1419">Little Elephant</option><option value="1423">Little Owl</option><option value="1424">Little Sloth</option><option value="84">Lobo</option><option value="1790">Locomotive</option><option value="1439">Lollipop</option><option value="85">Looper</option><option value="1915">Low-Poly</option><option value="2206">Low-Poly TE</option><option value="86">Lowrider</option><option value="1758">Lucky Stars</option><option value="1502">Luminous</option><option value="2048">Luster</option><option value="2046">Luster Edge</option><option value="1533">Lustrum x10</option><option value="1867">M8</option><option value="1396">Macaron</option><option value="1751">Macaron-Topper</option><option value="2065">Macho Man</option><option value="1805">Mad Bomber</option><option value="1817">Madness II</option><option value="1708">Mage Glass I</option><option value="1709">Mage Glass II</option><option value="1710">Mage Glass III</option><option value="291">Magic Missile</option><option value="1933">Magma</option><option value="1397">Magmus</option><option value="1667">Mainframe</option><option value="1869">Mainliner</option><option value="1868">Mainstreet</option><option value="261">Mantis</option><option value="1481">Mantis: Cold Front</option><option value="1359">Mantis: Critters</option><option value="1640">Mantis: Hammerhead</option><option value="1781">Mantis: Megabat</option><option value="1462">Mantis: Snakeskin</option><option value="1442">Mantis: Widow's Web</option><option value="1794">Marauder - Alley Cat</option><option value="1498">Marauder: XVIII</option><option value="87">Mariachi Hat</option><option value="1902">Marty Jr.</option><option value="235">Masamune: Kawaii</option><option value="1643">Masamune: Min-Spec</option><option value="170">Masamune: Oni</option><option value="1561">Masato</option><option value="1692">Maverick</option><option value="1693">Maverick G1</option><option value="1694">Maverick GXT</option><option value="1729">Maverick: Circuit Pro</option><option value="1733">Maverick: Gale-Fire</option><option value="1735">Maverick: Jetstream</option><option value="1401">Maximon</option><option value="1403">MDGA</option><option value="2003">Mendoza</option><option value="307">Merc</option><option value="1495">Merc: Athena</option><option value="1727">Merc: B.B. Wolf</option><option value="1349">Merc: Flower Power</option><option value="89">Merc: Narwhal</option><option value="148">Merc: Warlock</option><option value="1749">Meridian</option><option value="2059">Meta-Blast</option><option value="1409">Metallic (Smooth)</option><option value="1691">Metallic Flake</option><option value="1454">Metallic Pearl (Smooth)</option><option value="2004">Metalstar</option><option value="2031">Metalstar PRO</option><option value="1859">Metalwork&emsp;</option><option value="1860">Metalwork: Inverted</option><option value="2168">Meteor Storm</option><option value="2147">Metropolis</option><option value="1564">Migraine</option><option value="2082">Mistletoe</option><option value="1913">Mixtape</option><option value="1904">Miyagi-Do</option><option value="1379">MMS Headphones</option><option value="1388">Moai</option><option value="1808">Moko</option><option value="1410">Moon Rock</option><option value="2037">Morrowhatch</option><option value="1724">Motormouth</option><option value="276">Mount Champion</option><option value="88">Mouse Trap</option><option value="1380">Mr. Banana</option><option value="1625">Mr. Hot Dog</option><option value="1375">Mr. Hot Pepper</option><option value="1626">Mr. Pineapple</option><option value="1610">Mr. Toasty</option><option value="1400">Mrs. Avocado</option><option value="1953">Mudcat GXT</option><option value="2119">Muscle Boy</option><option value="1725">Muscle Car</option><option value="2093">Naginata</option><option value="1406">Narwhal</option><option value="1854">NCVR Offers</option><option value="262">Neo-Thermal</option><option value="1923">NeOctane</option><option value="191">Neptune</option><option value="201">Netherworld</option><option value="1996">Neuro-Agitator</option><option value="1627">New Year's 2017</option><option value="1994">NeYoYo</option><option value="1408">Nice Slice</option><option value="1777">Night Terror</option><option value="1769">Nimbus</option><option value="274">Ninja</option><option value="1992">Ninja Star</option><option value="1501">Nipper</option><option value="259">Nitro Crate</option><option value="2051">Nox</option><option value="1611">Nutcracker</option><option value="305">Octane</option><option value="1754">Octane - CRL Northern</option><option value="1875">Octane - Quetzalcoat</option><option value="1795">Octane - Watermelon</option><option value="212">Octane ZSR</option><option value="223">Octane ZSR: Distortion</option><option value="1638">Octane ZSR: Funny Book</option><option value="268">Octane ZSR: Jiangshi</option><option value="1668">Octane zsr: Mechaceph</option><option value="283">Octane ZSR: RLCS</option><option value="225">Octane ZSR: Tribal</option><option value="1985">Octane: Abtruse</option><option value="1963">Octane: Bleep-Bleep</option><option value="236">Octane: Buzzkill</option><option value="1969">Octane: Cannon Baller</option><option value="1665">Octane: Chantico</option><option value="1482">Octane: Christmas Tree</option><option value="1905">Octane: Cobra Kai</option><option value="1951">Octane: Conundrum</option><option value="50">Octane: Distortion</option><option value="1544">Octane: Dot Rush</option><option value="1732">Octane: Dr. Thrash</option><option value="2109">Octane: Dragon</option><option value="54">Octane: Dragon Lord</option><option value="1516">Octane: Dune Racer</option><option value="1965">Octane: Edge Star</option><option value="1840">Octane: Gale Fire</option><option value="269">Octane: Griffon</option><option value="1641">Octane: Island King</option><option value="2012">Octane: Jacktide</option><option value="1990">Octane: Kana</option><option value="1949">Octane: Killer Griller</option><option value="209">Octane: Kilowatt</option><option value="304">Octane: Lone Wolf</option><option value="1964">Octane: Metarudia</option><option value="167">Octane: MG-88</option><option value="1737">Octane: Nice Shot</option><option value="1785">Octane: Noooo!</option><option value="110">Octane: Racer</option><option value="1500">Octane: Ripped Comic</option><option value="282">Octane: RLCS</option><option value="202">Octane: Roadkill</option><option value="1543">Octane: Royal Tyrant</option><option value="171">Octane: Shisa</option><option value="2076">Octane: Sleet Creeps</option><option value="1455">Octane: Slimline</option><option value="239">Octane: Snakeskin</option><option value="1741">Octane: Space Cadet</option><option value="1762">Octane: Sticker Bomb</option><option value="1824">Octane: Sweater Fest</option><option value="1445">Octane: Thanatos</option><option value="1783">Octane: Trick or Treat</option><option value="1844">Octane: Tumbling Blocks</option><option value="1650">Octane: Turtle Tribe</option><option value="2070">Octane: Ultimate Warrior</option><option value="1921">Octane: Vaporwave</option><option value="2164">Octane: Vertebrate</option><option value="2069">Octane: Voltron</option><option value="1841">Octane: Windblast</option><option value="192">Octavian</option><option value="1398">Octopus</option><option value="193">OEM</option><option value="2155">Orbit</option><option value="1983">Ouchie</option><option value="292">Overdrive Crate</option><option value="2136">Overgrowth</option><option value="1931">P-SIMM</option><option value="1936">P-SIMM Inverted</option><option value="1947">Paladin</option><option value="1646">Paladin: ShapeRacer</option><option value="1628">Palm Tree</option><option value="91">Paper Boat</option><option value="2103">Paper Dragon</option><option value="2105">Paper Dragon</option><option value="92">Parallax</option><option value="93">Parrot</option><option value="1738">Partly Cloudy</option><option value="94">Party Hat</option><option value="1372">Party Time</option><option value="2045">Patchwork</option><option value="1999">Patriarch</option><option value="1358">Pearlescent (Matte)</option><option value="1797">Peggy Panda</option><option value="1477">Peppermint</option><option value="1486">Peppermint</option><option value="1870">Percussion</option><option value="2187">Peregrine TT</option><option value="2193">Peregrine TT: Crisis</option><option value="2195">Peregrine TT: Hoodbar</option><option value="1886">Periscope</option><option value="2173">Petacio</option><option value="1910">Phat Hat</option><option value="2203">Phat Hat LIVE</option><option value="1971">Philoscope III</option><option value="1720">Phoenix Wings I</option><option value="1721">Phoenix Wings II</option><option value="1722">Phoenix Wings III</option><option value="96">Photon</option><option value="1988">Picket</option><option value="2000">Picket: Holographic</option><option value="97">Pigeon</option><option value="1392">Pigeon</option><option value="98">Pinata</option><option value="1441">Pinwheel</option><option value="99">Pirate's Hat</option><option value="100">Pixel Fire</option><option value="2169">Pixel Fire - Banner</option><option value="1912">Pizza Pixel</option><option value="2198">Pizza Pixel 2P</option><option value="101">Pizza Topper</option><option value="315">Plasma</option><option value="1816">Plasmatic</option><option value="220">Player's Crate Series I</option><option value="2055">Plosion</option><option value="102">Plunger</option><option value="1861">Polaris</option><option value="1862">Polaris: Remixed</option><option value="103">Police Hat</option><option value="1469">Poly Pop</option><option value="1809">Polychrome</option><option value="105">Polygonal</option><option value="1373">Popcorn</option><option value="1653">Popcorn Boost</option><option value="95">Pork Pie</option><option value="107">Portal - Cake</option><option value="1368">Power-Shot</option><option value="108">Propellerhead</option><option value="213">Proton</option><option value="1523">Psyonix</option><option value="2200">Psyonix II</option><option value="1652">Psyonix Wheels</option><option value="162">Pulsus</option><option value="109">Pumpkin</option><option value="1699">Pyramidia</option><option value="1848">Pyrrhos</option><option value="2120">Q-Runner</option><option value="1960">Qilin Horns II</option><option value="2186">Quasar</option><option value="1813">Quasar III</option><option value="1600">Quimby</option><option value="1792">R/C</option><option value="1955">Racer Flames</option><option value="2134">Rad Rock</option><option value="2137">Rad Rock - GE</option><option value="2139">Rad Rock - Trail</option><option value="2085">Radiant Rush</option><option value="1771">Raijin</option><option value="1595">Rainbow</option><option value="111">Rainbow Flag</option><option value="1956">Rally Tracks II</option><option value="117">Rasta</option><option value="112">Rat Rod</option><option value="1793">RAT ROD</option><option value="1514">Razzle</option><option value="1658">Reactor</option><option value="1449">Reaper</option><option value="1562">Reaper-Wheels</option><option value="2112">Red Envelopes</option><option value="1551">REEVRB</option><option value="2030">Reticle</option><option value="1896">Retro Fresh</option><option value="1446">Revenant</option><option value="1747">Rhino</option><option value="113">Rhino Horns</option><option value="2104">Richie Rat</option><option value="1585">RL Beach Blast Crate</option><option value="2197">RL Streamer</option><option value="1521">RLEsports</option><option value="2148">RNSM</option><option value="308">Road Hog</option><option value="1796">Road Hog - Quick Fix</option><option value="114">Road Hog XL</option><option value="29">Road Hog: Carbonated</option><option value="208">Road Hog: Snakeskin</option><option value="1560">Road Hog: Sundae</option><option value="203">Road Hog: Wildfire</option><option value="115">Robo-Visor</option><option value="1402">Rockat</option><option value="116">Rocket</option><option value="1815">Rocket Forge II</option><option value="1814">Rocket Forge II: Holographic</option><option value="1679">Rocket Labs</option><option value="2141">Ronin GXT</option><option value="1378">Rooster Comb</option><option value="118">Rose</option><option value="245">Roulette</option><option value="119">Royal Crown</option><option value="121">Rubber Duckie</option><option value="2107">Ruckus</option><option value="1940">S&#900;More</option><option value="1590">S'mored</option><option value="316">Sacred</option><option value="122">Sad Sapling</option><option value="1376">Sad Strawberrry</option><option value="1411">Salty</option><option value="1548">Samurai</option><option value="1629">Sand Castle</option><option value="123">Santa</option><option value="1568">Santa-Fe</option><option value="1369">Saptarishi</option><option value="1601">SARPBC-10</option><option value="1612">SARPBC-10</option><option value="1355">Satellite</option><option value="1630">Scarecrow Jack</option><option value="1452">Scary Pumpkin</option><option value="2015">Scoops Ahoy</option><option value="2064">SDTV</option><option value="2005">Sea Turtle</option><option value="1356">Seastar</option><option value="1471">Secret Santa Crate</option><option value="1991">Sentinel</option><option value="2163">Sentinel: Faceted</option><option value="241">Septem</option><option value="1613">Shadow Witch</option><option value="1680">Shark Attack</option><option value="1385">Shattered</option><option value="1932">Shattered</option><option value="1871">Shield Glitch</option><option value="2025">Shima</option><option value="2083">Shima: Infinite</option><option value="2042">Shining Barrage I</option><option value="2086">Shining Barrage I</option><option value="2041">Shining Barrage II</option><option value="2032">Shinkei</option><option value="1591">Shooting Star</option><option value="2121">Shortwire</option><option value="125">Shuriken</option><option value="1711">Siiick Reads</option><option value="2006">Silent Panda</option><option value="1663">Singularity</option><option value="1874">Skewered </option><option value="1878">Slash Beam III</option><option value="1830">Sleigh-Bailed</option><option value="129">Slipstream</option><option value="286">SLK</option><option value="1903">Sloth's Hat</option><option value="2190">Smokescreen</option><option value="1806">Snail</option><option value="1885">Snare Drum</option><option value="1351">Snowboards</option><option value="2077">Snowman Avatar</option><option value="1828">Snowstorm</option><option value="1681">Soccar Nebula</option><option value="1592">Soccer Ball</option><option value="1593">Soccer Splash</option><option value="1772">Solar Flare</option><option value="1746">Solar System</option><option value="128">Sombrero</option><option value="1602">Sovereign A/T</option><option value="1889">Sparkler III</option><option value="317">Sparkles</option><option value="260">Spectre</option><option value="2011">Spider Boogie</option><option value="210">Spiralis</option><option value="2024">Spiralis R2</option><option value="1512">Spring Fever Crate</option><option value="2108">Spring Pagoda</option><option value="1535">Springtime Flowers</option><option value="1821">Sprocket</option><option value="1822">Sprocket: Infinite</option><option value="194">Spyder</option><option value="318">Standard</option><option value="1390">Starbase Arc</option><option value="2020">Starcourt</option><option value="2053">Starscape</option><option value="2035">Startis</option><option value="2177">Statesman</option><option value="1395">Stegosaur</option><option value="1927">Stella</option><option value="1937">Stella: Infinite</option><option value="195">Stern</option><option value="1386">Sticker Bomb</option><option value="1892">Sticker Shock</option><option value="2208">Stiletto</option><option value="1520">Stoic Muffin</option><option value="1510">Storm Watch</option><option value="1843">Straight-Line</option><option value="2016">Stranger Things</option><option value="1799">Streak Wave</option><option value="1571">Streamline</option><option value="295">Sub-Zero</option><option value="1631">Succulents</option><option value="1604">Sun Ray</option><option value="131">Sunburst</option><option value="132">Sunflower</option><option value="2205">Sunrise 1986</option><option value="1917">Sunset 1986</option><option value="2063">Sunset 1986 Banner</option><option value="1688">Supernova I</option><option value="1689">Supernova II</option><option value="1690">Supernova III</option><option value="2144">Sure Shot</option><option value="1432">Surfboard</option><option value="1682">Sushi Roll</option><option value="1632">Swim Ring</option><option value="1648">Swirls</option><option value="1768">Synthwave</option><option value="243">Tachyon</option><option value="1810">Tachyon III</option><option value="1407">Taco</option><option value="1387">Tagged</option><option value="133">Takumi RX-T</option><option value="1637">Takumi rx-t: Chusho</option><option value="221">Takumi RX-T: Distortion</option><option value="228">Takumi RX-T: Super RX-T</option><option value="10">Takumi: Anubis</option><option value="238">Takumi: Aqueous</option><option value="41">Takumi: Combo</option><option value="169">Takumi: Distortion</option><option value="1353">Takumi: Sticker Bomb</option><option value="265">Takumi: Vector</option><option value="150">Takumi: Whizzle</option><option value="134">Taxi Topper</option><option value="2091">Tea Kettle</option><option value="2092">Tee Time</option><option value="1818">Teller</option><option value="1519">The Two-Time</option><option value="319">Thermal</option><option value="1659">Thread-X2</option><option value="2054">Three-Play</option><option value="135">Tiara</option><option value="2165">Tidal Stream</option><option value="2128">Tigress</option><option value="2019">Timbertyre</option><option value="2125">Ton-Eighty</option><option value="1508">Toon</option><option value="1596">Toon Hydro</option><option value="1505">Toon Sketch</option><option value="2170">Toon Sketch - Paint Finish</option><option value="136">Toon Smoke</option><option value="137">Top Hat</option><option value="255">Topper Offers</option><option value="249">Tora</option><option value="1605">Torrent</option><option value="1918">Totally Awesome</option><option value="2033">TP19</option><option value="138">Traffic Cone</option><option value="139">Trahere</option><option value="2145">Tranquil Tangerine</option><option value="2196">Tranquil Toff</option><option value="2100">Tranquility</option><option value="2151">Tranquility - Avatar Border</option><option value="1683">Trash It!</option><option value="1788">Tread Heavily</option><option value="185">Treasure</option><option value="2158">Tremor</option><option value="2159">Tremor: Inverted</option><option value="2122">Tri-2050</option><option value="182">Trident</option><option value="1511">Trigon</option><option value="140">Trinity</option><option value="263">Triplex</option><option value="1745">Triplicate</option><option value="1639">Triton: Glyphtrix</option><option value="1555">Triumph Crate</option><option value="172">Troika</option><option value="1700">Troublemaker I</option><option value="1701">Troublemaker II</option><option value="1702">Troublemaker III</option><option value="1703">Troublemaker IV</option><option value="141">Trucker Hat</option><option value="1989">Truncheon</option><option value="1504">Tsunami Beam</option><option value="2034">Tube Tank</option><option value="1863">Tungsten</option><option value="142">Tunica</option><option value="289">Turbine</option><option value="233">Turbo Crate</option><option value="1404">Turtle</option><option value="1887">Turtle Shell</option><option value="1798">Twinkle Box</option><option value="1565">Twinzer</option><option value="1839">Twinzer: Good Shape</option><option value="1761">Twinzer: Muddy</option><option value="2096">Twinzer: Quick Fix I</option><option value="1919">Twinzer: Smooth Jazz</option><option value="1651">Twisted Tree</option><option value="1803">Udder</option><option value="1883">UFO II</option><option value="1864">Ulterior</option><option value="2160">Ultralex</option><option value="1433">Uncle Sam</option><option value="1633">Undying Love</option><option value="143">Unicorn</option><option value="1421">Unicorn</option><option value="1968">Universal: Formation</option><option value="2049">Upstream</option><option value="2101">Valorous</option><option value="1450">Vampire Bat</option><option value="2057">Vaporstream</option><option value="1914">Vaporwave</option><option value="2066">Vaporwave Banner</option><option value="2199">Vaporwave Remix</option><option value="1865">Ved-Ava II</option><option value="196">Veloce</option><option value="1470">Velocity Crate</option><option value="309">Venom</option><option value="1944">Venom Ride</option><option value="58">Venom: Flex</option><option value="90">Venom: Nine Lives</option><option value="1759">Venom: Retro Sun</option><option value="144">Venus Flytrap</option><option value="1684">Vice</option><option value="1494">Victory Crate</option><option value="1958">Victory Hand</option><option value="1982">Vindicator</option><option value="1660">Virtual Wave</option><option value="1866">Visionary</option><option value="146">Visor</option><option value="82">Voltaic</option><option value="2043">Voltron</option><option value="2068">Voltron Topper</option><option value="197">Vortex</option><option value="1934">Voxel</option><option value="147">Waffle</option><option value="1961">Wall Breaker II</option><option value="1712">Warm Watermelon</option><option value="1704">Watermelon</option><option value="1948">Watermelon</option><option value="1503">Werewolf</option><option value="1773">Wet Paint</option><option value="161">Wheel Offers</option><option value="149">White Hat</option><option value="151">Wildcat Ears</option><option value="1522">Winning Streak</option><option value="1489">Winter Storm</option><option value="1833">Winter Storm-Trail</option><option value="1488">Winter's Warmth</option><option value="152">Witch's Hat</option><option value="153">Wizard Hat</option><option value="1492">Wonderment</option><option value="154">Work Boot</option><option value="1374">Worried Watermelon</option><option value="1579">WWE</option><option value="1574">WWE - Banner</option><option value="1573">WWE - Wheels</option><option value="1582">WWE NXT</option><option value="1786">WWE NXT - Banner</option><option value="1575">WWE RAW</option><option value="1580">WWE RAW</option><option value="1576">WWE SmackDown Live!</option><option value="1581">WWE SmackDown Live!</option><option value="1578">WWE WrestleMania 34</option><option value="1583">WWE WrestleMania 34</option><option value="310">X-Devil</option><option value="1877">X-Devil - Disco Monster</option><option value="2">X-Devil Mk2</option><option value="226">X-Devil Mk2: Cobra</option><option value="1730">X-devil: Devil's Advocate</option><option value="1731">X-devil: Dot Matrix</option><option value="206">X-Devil: Maximon</option><option value="127">X-Devil: Snakeskin</option><option value="240">Xenosplash</option><option value="156">Xmas</option><option value="2074">Xmas Lights Banner</option><option value="2081">Xmas Lights Boost</option><option value="1763">Yamane</option><option value="2026">Yankii RL</option><option value="2039">Yankii RL: Infinite</option><option value="2084">Yin-Yang</option><option value="2056">Yokai</option><option value="1487">Yuletide</option><option value="1459">Yuzo</option><option value="2189">Z-Current</option><option value="1603">Z-Plate</option><option value="2123">Z-Ro</option><option value="2124">Z-Ro: Inverted</option><option value="1598">Zebra</option><option value="1930">Zefram</option><option value="1935">Zefram: Infinite</option><option value="1661">Zephyr Crate</option><option value="173">Zeta</option><option value="1975">Zhou GFP</option><option value="1461">Zigzag</option><option value="216">Zomba</option><option value="1448">Zombie</option><option value="1849">Zowie</option><option value="1852">Zowie: Infinite</option><option value="287">ZT-17</option></select></div>
+      <div class="col-xs-12 col-sm-6 col-lg-4 color_search">
+        Color
+        <select name="inv_color[inv_color_id]" id="inv_color_inv_color_id"><option value=""></option><option value="1">Black</option><option value="2">Burnt Sienna</option><option value="3">Cobalt</option><option value="14">Colored</option><option value="4">Crimson</option><option value="5">Forest Green</option><option value="6">Grey</option><option value="7">Lime</option><option value="8">Orange</option><option value="13">Pink</option><option value="9">Purple</option><option value="10">Saffron</option><option value="15">Set</option><option value="11">Sky Blue</option><option value="12">Titanium White</option></select></div>
+      <div class="col-xs-12 col-sm-6 col-lg-3 cert_search">
+        Certification
+        <select name="inv_cert[inv_cert_id]" id="inv_cert_inv_cert_id"><option value=""></option><option value="1">Acrobat</option><option value="16">Any Cert</option><option value="2">Aviator</option><option value="3">Goalkeeper</option><option value="4">Guardian</option><option value="5">Juggler</option><option value="6">Paragon</option><option value="7">Playmaker</option><option value="8">Scorer</option><option value="9">Show-Off</option><option value="10">Sniper</option><option value="11">Striker</option><option value="12">Sweeper</option><option value="13">Tactician</option><option value="14">Turtle</option><option value="15">Victor</option></select></div>
+      <div class="col-xs-12 col-sm-6 col-lg-5 type_search">
+        Search type
+        <select name="h_w" id="h_w"><option value="have">I have</option><option value="want">I want</option></select></div>
+      <div class="col-lg-3 col-lg-offset-1 col-offset-lg-1 col-sm-6 col-xs-6">
+          <div style="margin-top: 20px;">
+    Text search is only available for signed in Users
+  </div>
+
+
+
+      </div>
+      <div class="col-lg-3 col-sm-6 col-xs-6">
+
+        <div class="action_btn action_btn_orange send_simple_search pull-right" style="padding: 5px 15px;margin-top:15px;margin-left:5px;">
+          Search
+        </div>
+        <div class="action_btn action_btn_orange reset_simple_search pull-right" style="padding: 5px 15px;margin-top:15px">
+          Reset Search
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    
+
+  <div class="pull-left switch_plat">
+    <div class="pull-left plat_title">
+      Trade Platform
+    </div>
+    <div class="pull-left">
+      <select name="trade_platform" id="trade_platform"><option value="">All</option><option value="1">Steam</option><option value="2">Playstation</option><option value="3">Xbox</option></select></div>
+  </div>
+  <script type="text/javascript">
+    $("#trade_platform").on("change",function(){
+      id = $(this).val()
+      
+        
+        if(id != ""){
+          createCookie("platform", id, 60)
+        }else{
+          createCookie("platform", id, -60)
+        }
+        window.location.reload()
+    })
+  </script></div>
+</div>
+
+
+<script type="text/javascript"> 
+  function createCookie(name,value,half_days) {
+    var expires = "";
+    if (half_days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (half_days*12*60*60*1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+
+  function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+  }
+  $(".reset_simple_search").on("click",function(){
+    createCookie("want","",-1000)
+    createCookie("have","",-1000)
+    createCookie("item_id",[item_id],-10000)
+    createCookie("color_id",[color_id],-10000)
+    createCookie("cert_id",[cert_id],-10000)
+    $(".item_search select").val("")
+    $(".color_search select").val("")
+    $(".cert_search select").val("")
+      window.location.href = "/trades"
+  })
+  $(".send_simple_search").on("click",function(){
+    item = $(".item_search option:selected").text()
+    item_id = $(".item_search select").val()
+    color = $(".color_search option:selected").text()
+    color_id = $(".color_search select").val()
+    cert = $(".cert_search option:selected").text()
+    cert_id = $(".cert_search select").val()
+    type = $(".type_search option:selected").text()
+
+    name = (color + " " + cert + " " + item).trim().replace(/\s{2,}/g, ' ');
+    if(type == "I have"){
+      createCookie("have",[name],10000)
+      createCookie("want","",-1000)
+      createCookie("item_id",[item_id],10000)
+      createCookie("color_id",[color_id],10000)
+      createCookie("cert_id",[cert_id],10000)
+      type_id = "request" 
+    }else{
+      createCookie("want",[name],10000)
+      createCookie("have","",-1000)
+      createCookie("item_id",[item_id],10000)
+      createCookie("color_id",[color_id],10000)
+      createCookie("cert_id",[cert_id],10000)
+      type_id = "offer" 
+    }
+    if(item == ""){
+      $(".reset_simple_search").click()
+
+      return false
+    }
+      if(cert_id == "" && color_id == ""){
+        window.location.href = "/trades/search/"+type_id+"/"+item_id
+      }else if(cert_id == ""){
+        window.location.href = "/trades/search/"+type_id+"/"+item_id+"?query[inv_color_id]="+color_id
+      }else if(color_id == ""){
+        window.location.href = "/trades/search/"+type_id+"/"+item_id+"?query[inv_cert_id]="+cert_id
+      }else{
+        window.location.href = "/trades/search/"+type_id+"/"+item_id+"?query[inv_cert_id]="+cert_id+"&query[inv_color_id]="+color_id
+      }
+  })
+      have = 1
+      want = null
+    item_id = 163
+
+    color_id = readCookie("color_id")
+    cert_id = readCookie("cert_id")
+  if((have != null || want != null) && item_id != null){
+    $(".item_search select").val(item_id)
+    $(".color_search select").val(color_id)
+    $(".cert_search select").val(cert_id)
+    if(have == null){
+      $(".type_search select").val("want")
+    }else{
+      $(".type_search select").val("have")
+    }
+  }else if((have != null || want != null) && item_id == null){
+    $(".reset_simple_search").click()
+  }
+  $(".simple_search select").chosen({no_results_text: "Oops, nothing found!", allow_single_deselect: true , placeholder_text_single: "&nbsp;"});
+  $('select').trigger("liszt:updated");
+</script><!--
+  selectors on trade search show
+  search click on search index
+ --><div class="row">
+        <div style="clear:both"></div>
+<div class="trades_partial">
+    <div class="pull-left paginate_header" style="margin-left: 15px;">  <nav class="pagination"><span class="page current">
+  1
+</span>
+
+        <span class="page">
+  <a rel="next" href="163?page=2.html">2</a>
+</span>
+
+        <span class="page">
+  <a href="163?page=3.html">3</a>
+</span>
+
+        <span class="page">
+  <a href="163?page=4.html">4</a>
+</span>
+
+        <span class="page">
+  <a href="163?page=5.html">5</a>
+</span>
+
+        <span class="page gap">&hellip;</span>
+
+      <span class="next">
+  <a rel="next" href="163?page=2.html">Next &rsaquo;</a>
+</span>
+
+      <span class="last">
+  <a href="163?page=62.html">Last &raquo;</a>
+</span>
+
+  </nav></div><br><div class="single_trade_wrapper not_prem">
+                <div class="col-xs-12 whole_trade_wrapper" data-id="2415724" style="margin-bottom:15px;padding-bottom: 10px;">
+          <div class="background" style="position:relative;background: #555;border-top-right-radius: 3px;border-top-left-radius: 3px;border-bottom: 1px solid grey;padding-bottom:10px;">
+            <div class="background_fake" style="width:100%;background:#2e2e2e;border-top-right-radius: 3px;border-top-left-radius: 3px;position: absolute;top:0;left:0;height:45px;z-index:0;border-bottom: 1px solid grey;">
+
+            </div>
+            <div class="trade_wrapper pull-left">
+              <div class="left_trade pull-left">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Has <img class="pull-right" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="reaper-wheels">
+                      <div class="item no-select-bruh" data-id="1562" data-cat="6" data-rarity="4" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1562/1-3fbfb1adf8e9ffbd4a0e6b55894b5418332d1f0df38cdcb170207aaa098ba661.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Reaper-Wheels</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color">Black</span><span class="mobile_color">Black</span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1562.html" class="hidden">Reaper-Wheels</a>
+                        <a href="1562.html" class="hidden">Reaper-Wheels</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div class="right_trade pull-right">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Wants <img class="pull-left" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="demon disc">
+                      <div class="item no-select-bruh" data-id="1776" data-cat="6" data-rarity="8" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1776/0-3830ca680550d41f4705909de175f9b27fb454fdb7daae82121c884eb3c3753c.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Demon Disc</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1776.html" class="hidden">Demon Disc</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="troublemaker iii">
+                      <div class="item no-select-bruh" data-id="1702" data-cat="6" data-rarity="8" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1702/0-cd39e23f3f89d8ae5b8b427bc399c6be6f2a7bb148a30fcf8a122de47aebccff.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Troublemaker III</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1702.html" class="hidden">Troublemaker III</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="discotheque">
+                      <div class="item no-select-bruh" data-id="163" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/163/0-f7e0fd15c1e8adac8f7328c75749249434b8c159bc797c12840a6aad746b7779.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Discotheque</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="163.html" class="hidden">Discotheque</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="equalizer">
+                      <div class="item no-select-bruh" data-id="1466" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1466/0-7c7a689beeaad0f29c86f392281ce85c7d8820653dad6cb05209d0a49592325a.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Equalizer</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1466.html" class="hidden">Equalizer</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="credits">
+                      <div class="item no-select-bruh" data-id="2021" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2021/0-11c91e80ded9d83373ee45d0018ebc5eb5be399f9aec37a68589551cfe795889.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Credits</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="2021.html" class="hidden">Credits</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="draco">
+                      <div class="item no-select-bruh" data-id="270" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/270/8-cce283896c8e7fdb54c45a037b0df46242dad14ec5fa80abc3a4a24d21ec7761.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Draco</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color">Orange</span><span class="mobile_color">Orange</span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="270.html" class="hidden">Draco</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="infinium">
+                      <div class="item no-select-bruh" data-id="1506" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1506/0-8c58e78b30efb6df150b6c8ec9b4ea6808afb4d049da8b998141bac503d6ca3b.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Infinium</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1506.html" class="hidden">Infinium</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="reactor">
+                      <div class="item no-select-bruh" data-id="1658" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1658/0-f74adf190da79ed3d6b46e455bc2d4fc51dd63ba84e86e3e16b7f0e1a2a6a2ee.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Reactor</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1658.html" class="hidden">Reactor</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="vampire bat">
+                      <div class="item no-select-bruh" data-id="1450" data-cat="11" data-rarity="6" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1450/0-1352da35adb007519bb71606cec3645e213141d487436488a84f79e5cdcae22e.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Vampire Bat</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1450.html" class="hidden">Vampire Bat</a>
+                      </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div style="clear:both"></div>
+            </div>
+            <div class="pull-right user_summary" style="text-align:left;padding-left:30px;">
+              <h5 style="margin-left: -1px;margin-top:0;position: relative;z-index: 1;background:#2e2e2e">
+                <a href="233966.html">Dropler </a>
+                <span style=""><span class="status_icon "></span></span> <time datetime="2020-10-27T18:42:02Z" data-local="time" data-format="%B %e, %Y %l:%M%P">October 27, 2020  6:42pm</time><div class="clear_me_later"></div>
+                    <a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a>
+                    <div class="pull-right spacer" style="padding-right:10px"> | </div>
+                  <a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2415724">Share</a>
+                  <div class="pull-right spacer spacer1" style="padding-right:10px"> | </div>
+                  <a class="pull-right" data-id="233966" href="https://discord.gg/JcTZmCT" style="padding-right: 10px;">Middleman</a>
+                  <ul class="mobile_ul pull-right"><li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs" aria-hidden="true"></i>Actions</a>
+                      <ul class="dropdown-menu"><li><a class="pull-right" data-id="233966" href="https://discord.gg/JcTZmCT">Middleman</a></li>
+                            <li><a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a></li>
+                            <li><div class="pull-right spacer" style="padding-right:10px"> | </div></li>
+                          <li><a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2415724">Share</a></li>
+                      </ul></li>
+                  </ul></h5>
+
+              <div class="row" style="margin-right: 0;">
+                <div class="col-lg-12 the_text">
+                  <div>
+                    
+                      <u class="pull-left">Steam Profile: </u>&nbsp;
+                      
+                      <a href="https://steamcommunity.com/profiles/76561198795622393/" target="_BLANK">Dropler </a>
+                    <div style="clear:both"></div>
+                      
+                       <a href="2415724.html" class="show_detail_trade" style="position: absolute;top: 0;right: 20px;">Show Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="clear:both"></div> 
+          </div>
+        </div>
+
+                <div class="col-xs-12 whole_trade_wrapper" data-id="2415359" style="margin-bottom:15px;padding-bottom: 10px;">
+          <div class="background" style="position:relative;background: #555;border-top-right-radius: 3px;border-top-left-radius: 3px;border-bottom: 1px solid grey;padding-bottom:10px;">
+            <div class="background_fake" style="width:100%;background:#2e2e2e;border-top-right-radius: 3px;border-top-left-radius: 3px;position: absolute;top:0;left:0;height:45px;z-index:0;border-bottom: 1px solid grey;">
+
+            </div>
+            <div class="trade_wrapper pull-left">
+              <div class="left_trade pull-left">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Has <img class="pull-right" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="nice slice">
+                      <div class="item no-select-bruh" data-id="1408" data-cat="33" data-rarity="4" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1408/0-868fb1d782d1efbe0b7fa04e7f0ded30fe032033bc8f6f5c00b02e1d880c8463.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Nice Slice</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1408.html" class="hidden">Nice Slice</a>
+                        <a href="1408.html" class="hidden">Nice Slice</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="truncheon">
+                      <div class="item no-select-bruh" data-id="1989" data-cat="6" data-rarity="4" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1989/0-ae3f34b8fc9a114a515b0cea2e64824c1feb9ab346cd1c698074f4fe7ea2a267.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Truncheon</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1989.html" class="hidden">Truncheon</a>
+                        <a href="1989.html" class="hidden">Truncheon</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="moai">
+                      <div class="item no-select-bruh" data-id="1388" data-cat="33" data-rarity="4" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1388/0-9e4b71a7dc7c2f0c837dcd2dbbe2461b2e60f30e27e7626363e5140b4d4fdc5a.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Moai</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1388.html" class="hidden">Moai</a>
+                        <a href="1388.html" class="hidden">Moai</a>
+                      </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div class="right_trade pull-right">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Wants <img class="pull-left" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="discotheque">
+                      <div class="item no-select-bruh" data-id="163" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/163/0-f7e0fd15c1e8adac8f7328c75749249434b8c159bc797c12840a6aad746b7779.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Discotheque</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="163.html" class="hidden">Discotheque</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="reaper">
+                      <div class="item no-select-bruh" data-id="1449" data-cat="11" data-rarity="6" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1449/0-1162db473a861f4dba0d7a86c0c6974da146c88250c535e6dea811d6510cc7fb.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Reaper</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1449.html" class="hidden">Reaper</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div style="clear:both"></div>
+            </div>
+            <div class="pull-right user_summary" style="text-align:left;padding-left:30px;">
+              <h5 style="margin-left: -1px;margin-top:0;position: relative;z-index: 1;background:#2e2e2e">
+                <a href="233852.html">18LEGAL18 </a>
+                <span style=""><span class="status_icon "></span></span> <time datetime="2020-10-14T09:46:17Z" data-local="time" data-format="%B %e, %Y %l:%M%P">October 14, 2020  9:46am</time><div class="clear_me_later"></div>
+                    <a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a>
+                    <div class="pull-right spacer" style="padding-right:10px"> | </div>
+                  <a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2415359">Share</a>
+                  <div class="pull-right spacer spacer1" style="padding-right:10px"> | </div>
+                  <a class="pull-right" data-id="233852" href="https://discord.gg/JcTZmCT" style="padding-right: 10px;">Middleman</a>
+                  <ul class="mobile_ul pull-right"><li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs" aria-hidden="true"></i>Actions</a>
+                      <ul class="dropdown-menu"><li><a class="pull-right" data-id="233852" href="https://discord.gg/JcTZmCT">Middleman</a></li>
+                            <li><a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a></li>
+                            <li><div class="pull-right spacer" style="padding-right:10px"> | </div></li>
+                          <li><a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2415359">Share</a></li>
+                      </ul></li>
+                  </ul></h5>
+
+              <div class="row" style="margin-right: 0;">
+                <div class="col-lg-12 the_text">
+                  <div>
+                    
+                      <u class="pull-left">Steam Profile: </u>&nbsp;
+                      
+                      <a href="https://steamcommunity.com/profiles/76561198113433886/" target="_BLANK">[&#1053;&#1077;_&#1041;&#1086;&#1061;_&#1053;&#1091;_&#1080;_&#1055;&#1086;&#1061;] </a>
+                    <div style="clear:both"></div>
+                      or throw your suggestions in the BOS steam friend code 153168158
+
+&#1083;&#1080;&#1073;&#1086; &#1082;&#1080;&#1076;&#1072;&#1081;&#1090;&#1077; &#1089;&#1074;&#1086;&#1080; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103; &#1074; &#1083;&#1089; &#1089;&#1090;&#1080;&#1084;&#1072; &#1082;&#1086;&#1076; &#1076;&#1088;&#1091;&#1075;&#1072; 153168158
+                       <a href="2415359.html" class="show_detail_trade" style="position: absolute;top: 0;right: 20px;">Show Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="clear:both"></div> 
+          </div>
+        </div>
+
+                <div class="col-xs-12 whole_trade_wrapper" data-id="2414825" style="margin-bottom:15px;padding-bottom: 10px;">
+          <div class="background" style="position:relative;background: #555;border-top-right-radius: 3px;border-top-left-radius: 3px;border-bottom: 1px solid grey;padding-bottom:10px;">
+            <div class="background_fake" style="width:100%;background:#2e2e2e;border-top-right-radius: 3px;border-top-left-radius: 3px;position: absolute;top:0;left:0;height:45px;z-index:0;border-bottom: 1px solid grey;">
+
+            </div>
+            <div class="trade_wrapper pull-left">
+              <div class="left_trade pull-left">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Has <img class="pull-right" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="anodized">
+                      <div class="item no-select-bruh" data-id="1460" data-cat="9" data-rarity="4" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1460/0-89cc93681e7b87a84de206c530d92d5cdc173b48d4e4213f723dd2b80f3b24ea.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Anodized</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1460.html" class="hidden">Anodized</a>
+                        <a href="1460.html" class="hidden">Anodized</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="furry">
+                      <div class="item no-select-bruh" data-id="247" data-cat="9" data-rarity="6" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/247/0-0259913547224467886d2fccfc699720ace2d588780ce80ef914d3fd02b87e8a.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Furry</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="247.html" class="hidden">Furry</a>
+                        <a href="247.html" class="hidden">Furry</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="equalizer">
+                      <div class="item no-select-bruh" data-id="1466" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1466/11-9786c0bf74e2f5ea2392da8e4cc8433415746318c3fb7f24d7c5cf4ee2012a65.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Equalizer</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color">Sky Blue</span><span class="mobile_color">Sky Blue</span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1466.html" class="hidden">Equalizer</a>
+                        <a href="1466.html" class="hidden">Equalizer</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="turbine">
+                      <div class="item no-select-bruh" data-id="289" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/289/0-69e3649865d60bb94be726bc2b1cf0427251bd9d7f50f85d4a92452ff6670277.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Turbine</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="289.html" class="hidden">Turbine</a>
+                        <a href="289.html" class="hidden">Turbine</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="triplex">
+                      <div class="item no-select-bruh" data-id="263" data-cat="6" data-rarity="6" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/263/10-e3e9600562ca7c0c4b35672eec9ff9bde068db94d34dac839c41945c61427c21.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Triplex</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color">Saffron</span><span class="mobile_color">Saffron</span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="263.html" class="hidden">Triplex</a>
+                        <a href="263.html" class="hidden">Triplex</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="pulsus">
+                      <div class="item no-select-bruh" data-id="162" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/162/0-1be217e37d4b46985c948a239461aa4855ba8a5c0f2771e2579064042af2a18a.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Pulsus</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="162.html" class="hidden">Pulsus</a>
+                        <a href="162.html" class="hidden">Pulsus</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="hexphase">
+                      <div class="item no-select-bruh" data-id="267" data-cat="3" data-rarity="4" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/267/4-2c2bc8b3e36f9cf856fd81d0d7b3472d04e5d96b8b37bff9b936b76cc2c72ecb.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Hexphase</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color">Crimson</span><span class="mobile_color">Crimson</span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="267.html" class="hidden">Hexphase</a>
+                        <a href="267.html" class="hidden">Hexphase</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="ion">
+                      <div class="item no-select-bruh" data-id="313" data-cat="3" data-rarity="6" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/313/2-073ede7c7686436d3a0bc703692a3f9aa8bcd4ec4ce0f1f210055468526ab054.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Ion</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color">Burnt Sienna</span><span class="mobile_color">B. Sienna</span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="313.html" class="hidden">Ion</a>
+                        <a href="313.html" class="hidden">Ion</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="any offers">
+                      <div class="item no-select-bruh" data-id="160" data-cat="34" data-rarity="11" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/160/0-a10594bb923ba63ebaa176a7662b2888cea92aab1066bf37855dde825ccf82d0.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Any Offers</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="160.html" class="hidden">Any Offers</a>
+                        <a href="160.html" class="hidden">Any Offers</a>
+                      </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div class="right_trade pull-right">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Wants <img class="pull-left" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="draco">
+                      <div class="item no-select-bruh" data-id="270" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/270/12-75d9bc9f114d074e6425c8bcd639df133f1e2ebe31b5cea5d9c873ecbf2d3d64.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Draco</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color">Titanium White</span><span class="mobile_color">T. White</span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="270.html" class="hidden">Draco</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="discotheque">
+                      <div class="item no-select-bruh" data-id="163" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/163/12-92f2be9520f105490d9dc730e01bc35e4c53c51c34a2676584c6433168384a22.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Discotheque</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color">Titanium White</span><span class="mobile_color">T. White</span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="163.html" class="hidden">Discotheque</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="hypnotik">
+                      <div class="item no-select-bruh" data-id="1552" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1552/12-8495c936239b6e13bb92d64e389e7863f91117d12022cd376961c409cd18b115.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Hypnotik</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color">Titanium White</span><span class="mobile_color">T. White</span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1552.html" class="hidden">Hypnotik</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="zomba">
+                      <div class="item no-select-bruh" data-id="216" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/216/12-b2a566c621e3376b4d1f4335159dd576ec840fab55064f7598b3e528f0515c21.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Zomba</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color">Titanium White</span><span class="mobile_color">T. White</span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="216.html" class="hidden">Zomba</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div style="clear:both"></div>
+            </div>
+            <div class="pull-right user_summary" style="text-align:left;padding-left:30px;">
+              <h5 style="margin-left: -1px;margin-top:0;position: relative;z-index: 1;background:#2e2e2e">
+                <a href="157331.html">JKAEM </a>
+                <span style=""><span class="status_icon "></span></span> <time datetime="2020-09-07T01:33:58Z" data-local="time" data-format="%B %e, %Y %l:%M%P">September  7, 2020  1:33am</time><div class="clear_me_later"></div>
+                    <a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a>
+                    <div class="pull-right spacer" style="padding-right:10px"> | </div>
+                  <a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2414825">Share</a>
+                  <div class="pull-right spacer spacer1" style="padding-right:10px"> | </div>
+                  <a class="pull-right" data-id="157331" href="https://discord.gg/JcTZmCT" style="padding-right: 10px;">Middleman</a>
+                  <ul class="mobile_ul pull-right"><li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs" aria-hidden="true"></i>Actions</a>
+                      <ul class="dropdown-menu"><li><a class="pull-right" data-id="157331" href="https://discord.gg/JcTZmCT">Middleman</a></li>
+                            <li><a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a></li>
+                            <li><div class="pull-right spacer" style="padding-right:10px"> | </div></li>
+                          <li><a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2414825">Share</a></li>
+                      </ul></li>
+                  </ul></h5>
+
+              <div class="row" style="margin-right: 0;">
+                <div class="col-lg-12 the_text">
+                  <div>
+                    
+                      <u class="pull-left">Steam Profile: </u>&nbsp;
+                      
+                      <a href="https://steamcommunity.com/profiles/76561198366366390/" target="_BLANK">Jkaem </a>
+                    <div style="clear:both"></div>
+                      ALL  FOR   1   ----     I   CAN   ADD   THINGS   TO   MAKE   IT   EQUAL... add me on steam
+                       <a href="2414825.html" class="show_detail_trade" style="position: absolute;top: 0;right: 20px;">Show Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="clear:both"></div> 
+          </div>
+        </div>
+
+                <div class="col-xs-12 whole_trade_wrapper" data-id="2414215" style="margin-bottom:15px;padding-bottom: 10px;">
+          <div class="background" style="position:relative;background: #555;border-top-right-radius: 3px;border-top-left-radius: 3px;border-bottom: 1px solid grey;padding-bottom:10px;">
+            <div class="background_fake" style="width:100%;background:#2e2e2e;border-top-right-radius: 3px;border-top-left-radius: 3px;position: absolute;top:0;left:0;height:45px;z-index:0;border-bottom: 1px solid grey;">
+
+            </div>
+            <div class="trade_wrapper pull-left">
+              <div class="left_trade pull-left">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Has <img class="pull-right" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="credits">
+                      <div class="item no-select-bruh" data-id="2021" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2021/0-11c91e80ded9d83373ee45d0018ebc5eb5be399f9aec37a68589551cfe795889.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Credits</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                          <span class="inline_amount" style="background:rgba(102, 102, 102, 0.6);">50</span>
+                        <a href="2021.html" class="hidden">Credits</a>
+                        <a href="2021.html" class="hidden">Credits</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="credits">
+                      <div class="item no-select-bruh" data-id="2021" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2021/0-11c91e80ded9d83373ee45d0018ebc5eb5be399f9aec37a68589551cfe795889.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Credits</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                          <span class="inline_amount" style="background:rgba(102, 102, 102, 0.6);">50</span>
+                        <a href="2021.html" class="hidden">Credits</a>
+                        <a href="2021.html" class="hidden">Credits</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="credits">
+                      <div class="item no-select-bruh" data-id="2021" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2021/0-11c91e80ded9d83373ee45d0018ebc5eb5be399f9aec37a68589551cfe795889.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Credits</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                          <span class="inline_amount" style="background:rgba(102, 102, 102, 0.6);">50</span>
+                        <a href="2021.html" class="hidden">Credits</a>
+                        <a href="2021.html" class="hidden">Credits</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="credits">
+                      <div class="item no-select-bruh" data-id="2021" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2021/0-11c91e80ded9d83373ee45d0018ebc5eb5be399f9aec37a68589551cfe795889.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Credits</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                          <span class="inline_amount" style="background:rgba(102, 102, 102, 0.6);">50</span>
+                        <a href="2021.html" class="hidden">Credits</a>
+                        <a href="2021.html" class="hidden">Credits</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="credits">
+                      <div class="item no-select-bruh" data-id="2021" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2021/0-11c91e80ded9d83373ee45d0018ebc5eb5be399f9aec37a68589551cfe795889.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Credits</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                          <span class="inline_amount" style="background:rgba(102, 102, 102, 0.6);">50</span>
+                        <a href="2021.html" class="hidden">Credits</a>
+                        <a href="2021.html" class="hidden">Credits</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="credits">
+                      <div class="item no-select-bruh" data-id="2021" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2021/0-11c91e80ded9d83373ee45d0018ebc5eb5be399f9aec37a68589551cfe795889.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Credits</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                          <span class="inline_amount" style="background:rgba(102, 102, 102, 0.6);">50</span>
+                        <a href="2021.html" class="hidden">Credits</a>
+                        <a href="2021.html" class="hidden">Credits</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="credits offers">
+                      <div class="item no-select-bruh" data-id="2061" data-cat="7" data-rarity="10" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/2061/0-86058eb15b256256ea1054600fa5c32d50617127694ca3da26a71721dcb40fcb.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Credits Offers</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="2061.html" class="hidden">Credits Offers</a>
+                        <a href="2061.html" class="hidden">Credits Offers</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);;background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div class="right_trade pull-right">
+                <h4 style="margin-top:0;position: relative;z-index: 1;background: rgb(46, 46, 46) !important;" class="">User Wants <img class="pull-left" src="images/signature_blanks-1.png" style="height: 25px;"></h4>
+                <div class="items_wrapper " style="margin-top: 10px;">
+                    <div class="item_col pull-left" data-name="ara-51">
+                      <div class="item no-select-bruh" data-id="217" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/217/0-7da1376a075d228554a27adfe0317914a554d3d0a3bceefa9c4946b860f6c3ec.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">ARA-51</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="217.html" class="hidden">ARA-51</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="chrono">
+                      <div class="item no-select-bruh" data-id="1370" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1370/0-efaf87e449a9ea931d11d5b085ba24ae59cb18c25c5c5a8cd7a07424ac0164f9.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Chrono</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1370.html" class="hidden">Chrono</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="draco">
+                      <div class="item no-select-bruh" data-id="270" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/270/0-db263dd1dc330a1b3b02a10c3ffee6a99a43bc2f80505b9862e6ce31917f88a4.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Draco</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="270.html" class="hidden">Draco</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="discotheque">
+                      <div class="item no-select-bruh" data-id="163" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/163/0-f7e0fd15c1e8adac8f7328c75749249434b8c159bc797c12840a6aad746b7779.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Discotheque</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="163.html" class="hidden">Discotheque</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="equalizer">
+                      <div class="item no-select-bruh" data-id="1466" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/1466/0-7c7a689beeaad0f29c86f392281ce85c7d8820653dad6cb05209d0a49592325a.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Equalizer</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="1466.html" class="hidden">Equalizer</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="k2 - wheels">
+                      <div class="item no-select-bruh" data-id="271" data-cat="6" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/271/0-6193a6417b677b9cc95373a5a09986c79c65a2d870ab820c755a8b0001f7e867.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">K2 - Wheels</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="271.html" class="hidden">K2 - Wheels</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="exotic offers">
+                      <div class="item no-select-bruh" data-id="253" data-cat="34" data-rarity="7" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);">
+                        <div class="item_image" style="background:url(/assets/rl-items/253/0-d9d02b054d923421a95f04936f316a6d9170b383efc07ac105d0bcc91fca6151.png);width:100%;height:100%;z-index:2;top:0;left:0;position:absolute;background-size: cover;"></div>
+                        <div class="name" style="background:rgba(102, 102, 102, 0.6);">Exotic Offers</div>
+                        <div style="position: absolute;bottom:0;width: 100%;z-index: 9000;">
+                          <div class="cert"></div>
+                          <div class="color" style="background:rgba(102, 102, 102, 0.6);"><span class="desktop_color"></span><span class="mobile_color"></span></div>
+                          <div class="other_game"></div>
+                        </div>
+                        <a href="253.html" class="hidden">Exotic Offers</a>
+                      </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                    <div class="item_col pull-left" data-name="">
+                      <div class=" no-select-bruh" style="box-shadow: 0px 0px 20px 0 rgba(0,0,0,.7);background: rgb(48,48,48);margin: 2px;position: relative;text-shadow: 0px 0px 5px black;color: #fff;width: 100px;height: 100px;">
+                     </div>
+                    </div>
+                  <div style="clear:both"></div>
+                </div>
+              </div>
+              <div style="clear:both"></div>
+            </div>
+            <div class="pull-right user_summary" style="text-align:left;padding-left:30px;">
+              <h5 style="margin-left: -1px;margin-top:0;position: relative;z-index: 1;background:#2e2e2e">
+                <a href="230646.html">DAYU180 </a>
+                <span style=""><span class="status_icon "></span></span> <time datetime="2020-07-05T22:10:14Z" data-local="time" data-format="%B %e, %Y %l:%M%P">July  5, 2020 10:10pm</time><div class="clear_me_later"></div>
+                    <a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a>
+                    <div class="pull-right spacer" style="padding-right:10px"> | </div>
+                  <a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2414215">Share</a>
+                  <div class="pull-right spacer spacer1" style="padding-right:10px"> | </div>
+                  <a class="pull-right" data-id="230646" href="https://discord.gg/JcTZmCT" style="padding-right: 10px;">Middleman</a>
+                  <ul class="mobile_ul pull-right"><li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs" aria-hidden="true"></i>Actions</a>
+                      <ul class="dropdown-menu"><li><a class="pull-right" data-id="230646" href="https://discord.gg/JcTZmCT">Middleman</a></li>
+                            <li><a class="pull-right login_login" href="#login" data-toggle="modal">Login to send Message</a></li>
+                            <li><div class="pull-right spacer" style="padding-right:10px"> | </div></li>
+                          <li><a style="margin-right:10px" class="pull-right share_button" href="#" data-id="2414215">Share</a></li>
+                      </ul></li>
+                  </ul></h5>
+
+              <div class="row" style="margin-right: 0;">
+                <div class="col-lg-12 the_text">
+                  <div>
+                    
+                      <u class="pull-left">Steam Profile: </u>&nbsp;
+                      
+                      <a href="https://steamcommunity.com/profiles/76561199050451581/" target="_BLANK">DAYU </a>
+                    <div style="clear:both"></div>
+                      &#1590;&#1610;&#1601;&#1606;&#1610;1090185853
+                       <a href="2414215.html" class="show_detail_trade" style="position: absolute;top: 0;right: 20px;">Show Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="clear:both"></div> 
+          </div>
+        </div>
+
+  </div>
+    <div class="pull-left paginate_header" style="margin-left:15px">  <nav class="pagination"><span class="page current">
+  1
+</span>
+
+        <span class="page">
+  <a rel="next" href="163?page=2.html">2</a>
+</span>
+
+        <span class="page">
+  <a href="163?page=3.html">3</a>
+</span>
+
+        <span class="page">
+  <a href="163?page=4.html">4</a>
+</span>
+
+        <span class="page">
+  <a href="163?page=5.html">5</a>
+</span>
+
+        <span class="page gap">&hellip;</span>
+
+      <span class="next">
+  <a rel="next" href="163?page=2.html">Next &rsaquo;</a>
+</span>
+
+      <span class="last">
+  <a href="163?page=62.html">Last &raquo;</a>
+</span>
+
+  </nav></div>
+</div>
+
+
+<script type="text/javascript">
+  function bind_trade(){
+    $(".delete_click").off("click").on("click",function(e){
+      if(!confirm("Please be aware that you can't create 2 similiar trades on the same day") == true){
+        return false;
+      }
+    })
+
+    $(".delete_click_2").off("click").on("click",function(e){
+      if(confirm("Please be aware that you can't create 2 similiar trades on the same day") == true){
+        id = $(this).data("id")
+        $.ajax({
+          url:"/trades/delete_ajax",
+          method:"post",
+          data:{id},
+          success: function(){
+            $(".whole_trade_wrapper[data-id='"+ id +"']").remove()
+          }
+        })
+      }
+      return false;
+    })
+    $(".expand").off("click").on("click",function(e){
+      e.preventDefault()
+      $(this).closest(".the_text").css("max-height","500000px")
+    })
+    $(".auto_bump span").off("click").on("click",function(){
+      $(this).closest(".auto_bump").find("input").trigger("click")
+    })
+    $('.share_button').off("click").on('click', function (e) {
+      e.preventDefault();
+      $('#share_modal').modal()
+      id = $(this).data("id")
+      $("#share_modal Input").val("https://rltracker.pro/trades_img/"+id+".png")
+      setTimeout(function(){
+        $(".twitter_div").html('<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="I created a Trade on https://rltracker.pro/trades_img/'+id+'.png" data-url="https://rltracker.pro/trades/'+id+'" data-via="rltracker" data-related="rltracker,rltracker" data-show-count="false">Tweet<script async src="//platform.twitter.com/widgets.js" charset="utf-8"><\/script>')
+      },300)
+      $(".fb_link").html('<div class="fb-share-button" data-href="https://rltracker.pro/trades/'+id+'" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Frltracker.pro%2Ftrades%2F'+id+'&amp;src=sdkpreparse">Teilen</script></div>')
+    })
+    $('.report_btn').off("click").on('click', function (e) {
+      e.preventDefault();
+      $(".report_text").val("")
+      $('#report_modal').modal()
+      id = $(this).data("id")
+      $("#report_modal Input.trade_id").val(id)
+      $("#report_modal Input.user_id").val()
+    })
+    $(".auto_bump input").off("change").on("change",function(){
+        alert("This is a premium only feature :)")
+    })
+    $(".bump_trade").off("click").on("click",function(e){
+      e.preventDefault()
+      id = $(this).data("id")
+      if(confirm("Bumping your Trade will cost 10 Trackerpoints!") == true){
+        $.ajax({
+          url:"/trades/bump",
+          data:{id: id},
+          success:function(data){
+            if(data["answer"] == "success"){
+              window.location.reload()
+            }else if(data["answer"] == "early"){
+              render_alert("You have to wait 1 hour between bumps", "alert");
+            }else if(data["answer"] == "queued"){
+              render_alert("Your Trade is already queued for bumping. Please be patient", "alert");
+            }else if(data["answer"] == "Nope" ){
+              render_alert("You dont have enough Trackerpoints", "alert");
+            }
+          }
+        })
+      }else{
+      }
+    })
+  }
+  bind_trade()
+  $(document).ready(function(){
+    $.ajax({
+      url:"/trades/get_rest",
+      data:{"ids": [2412599, 2413467, 2412969, 2413588, 2412518, 2406824, 2404259, 2403957, 2403693, 2396683, 2395525, 2393574, 2390044, 2389530, 2378396, 2374733], "report":"false"},
+      success: function(data){
+        $(".single_trade_wrapper.not_prem").append(data)
+        bind_trade()
+        resize_user()
+      }
+    })
+
+  })
+
+
+<style type="text/css">
+.items_wrapper.premium{
+  
+}
+.auto_bump{
+  margin-right: 10px;
+  font-size: 16px;
+  position: relative;
+  top: -1px;
+}
+.user_summary time{
+  font-size: 11px;
+  position: relative;
+  top: -2px;
+}
+h4.premium{
+  background:#435b91 !important;
+}
+a,a:active,a:visited,a:hover{
+  color:rgb(230,111,51);
+}
+.pagination .page a,.pagination .first a,.pagination .prev a,.pagination .next a,.pagination .last a{
+  padding: 10px;
+  background:rgb(68,68,68);
+  border: 1px solid rgb(46,46,46);
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  margin-right: -5px;
+  cursor: pointer;
+}
+.pagination .first a,.pagination .prev a,.pagination .next a,.pagination .last a{
+  width: 65px;
+  height: 40px;
+}
+.pagination .page.current,.pagination .page.gap{
+  padding: 10px;
+  color:rgb(230,111,51);
+  background:rgb(46,46,46);
+  border: 1px solid rgb(46,46,46);
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  margin-right: -5px;
+  cursor: pointer;
+}
+
+.pagination .page a:hover,.pagination .first a:hover,.pagination .prev a:hover,.pagination .next a:hover,.pagination .last a:hover {
+  background:rgb(46,46,46);
+}
+.pagination .page.gap{
+  background: rgb(68,68,68);
+}
+</style><div class="modal fade" tabindex="-1" id="share_modal" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Share this Trade</h4>
+      </div>
+      <div class="modal-body">
+        <p>Twitter</p>
+        <div class="twitter_div"></div>
+        <p>Facebook</p>
+        <p><a class="fb_link" target="blank" href="request.html">Share on Facebook</a></p>
+        <p>Image link</p>
+        <p><input style="width:100%;color:black"></p>
+        <p>Discord</p>
+        <p>Coming soon</p>
+        <p>Reddit</p>
+        <p>Coming soon</p>
+      </div>
+      <div class="modal-footer">
+        <div class="action_btn action_btn_orange pull-right" style="padding:5px 30px;color:white" data-dismiss="modal">
+          Close
+        </div>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" id="report_modal" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Report this Trade</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger">
+          <center><strong>REPORTING SOMEONE WITHOUT SUFFICIENT PROOF COULD GET YOU BANNED</strong><br></center>
+          We are accepting reports for:
+          <ul style="margin-left: 15px;"><li>Distributing Discord Links or Spam links</li>
+            <li>Mention of duping or other exploits/hacks in the trade</li>
+            <li>Scamming (<strong>ONLY WITH VIDEO PROOF</strong>)</li>
+            <li>Wrong Steam Url in Trade Description</li>
+          </ul></div>
+        <input class="trade_id hidden" type="" name="trade_id"><div>Description:</div>
+        <textarea class="report_text" type="text" name="text" style="width:100%;height:150px"></textarea></div>
+      <div class="modal-footer">
+        <div class="action_btn action_btn_orange pull-right" style="padding:5px 30px;color:white" data-dismiss="modal">
+          Close
+        </div>
+        <div class="action_btn action_btn_orange pull-right send_report" style="padding:5px 30px;color:white" data-dismiss="modal">
+          Send Report
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div class="modal fade" tabindex="-1" id="rep_modal" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Rep this User</h4>
+      </div>
+      <div class="modal-body">
+          <div class="alert alert-danger">
+            <strong>To add reps you have to </strong><br><ul style="margin-left: 15px;"><li>be registered for at least 3 months</li>
+              <li>added less than 6 reps today</li>
+            </ul></div>
+      </div>
+      <div class="modal-footer">
+        <div class="action_btn action_btn_orange pull-right" style="padding:5px 30px;color:white" data-dismiss="modal">
+          Close
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.rep_btn').on('click', function (e) {
+      e.preventDefault();
+      $(".rep_text").val("")
+      $('#rep_modal').modal()
+      id = $(this).data("id")
+      $("#rep_modal Input.user_id").val(id)
+    })
+    $(".send_report").on("click",function(){
+      $.ajax({
+        url:"/trades/report",
+        data:{trade_id: $("#report_modal .trade_id").val(),text:$("#report_modal .report_text").val()},
+        success: function(){
+          alert("Report successfully sent!")
+        }
+      })
+    })
+    $(".send_rep").on("click",function(){
+      $.ajax({
+        url:"/trades/add_rep",
+        data:{id: $("#rep_modal .user_id").val(), text: $("#rep_modal .rep_text").val(), rep: $("#rep_modal .gimme_rep").val()},
+        success: function(data){
+          answer = data["answer"]
+          alert(answer)
+        }
+      })
+    })
+  })
+</script><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.7&appId=829526853729336";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script><script type="text/javascript">
+
+  jQuery(document).ready(function($) {
+    resize_user()
+  });
+
+  $(window).on("resize",function(){
+    resize_user()
+  })
+
+</script><script type="text/javascript">
+  $(".item").on("click",function(e){
+    search_id = $(this).data("id")
+    $(".search_box").remove()
+
+    $("body").append("<div data-id='"+search_id+"'class='search_box' style='position:absolute;left:"+e.pageX+"px;top:"+e.pageY+"px;background:#666;z-index:9999999;'><div style='padding:10px;''>"+$(this).find(".name").html()+"</script></div><hr style="margin:0"><div><a style="padding:10px" href="%22+search_id+%22.html">Search for offer</a></div><div><a style="padding:10px" href="%22+search_id+%22.html">Search for request</a></div><div><a style="padding:10px" href="%22+search_id+%22.html">Search in Inventories</a></div><div><a style="padding:10px" href="%22+search_id+%22.html">Search in Price Sheet</a></div></div>")
+
+    setTimeout(function(){
+
+      $(".search_box").bind( "clickoutside",function(event){
+          $(".search_box").remove()
+      })
+    },300)
+  })
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+            </div>
+
+            
+          
+        
+      
+        
+    <div id="login" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Sign In</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4" style="color:white;border-right:solid grey 1px">
+                <div>Authorize with</div>
+                <a href="steam.html" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:#212121;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="images/platforms-steam-e99c23c41d76d5d13868ea532e815d7fd6696771c263d4336d20346ed4875858.png" alt="Steam"></div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:#212121;width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Steam
+                    </div>
+                  </div>
+                </a>
+
+                <div style="clear:both"></div>
+                <a href="auth.html" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:rgb(115,137,214);margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="images/platforms-discordlogo-d2efe994cc89b53fc4dd401333563ae3415ca94bf079f3b8e883f9474e117f2b.png" alt="Discordlogo"></div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:rgb(115,137,214);width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Discord
+                    </div>
+                  </div>
+                </a>
+                <div style="clear:both"></div>
+                <a href="twitch.html" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:#551A8B;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="images/platforms-twitch-29f8c7a3f8bbdd4b0a505606ccce947e297ea2755c886d7f1da6536ae099dc6d.png" alt="Twitch"></div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:#551A8B;width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Twitch
+                    </div>
+                  </div>
+                </a>
+                <div style="clear:both"></div>
+                <a href="reddit.html" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:#ff4500;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="images/platforms-reddit-a461f8f751951f040460f37f322f61e6f7a14402326b4a6e78174a13e17fe423.png" alt="Reddit"></div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:#ff4500;width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Reddit
+                    </div>
+                  </div>
+                </a>
+                <!--
+                <div style="clear:both"></div>
+                <a href="/auth/twitter" class="cols-xs-12">
+                  <div class="btn btn-primary btn-small pull-left" style="background:#4099ff;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      <img class="platform_icon" src="/assets/platforms/twitre-28ce324412abd4ce8b78e5af59cc5e0f7699653f6b2624e0e4c4e7911916d9b6.png" alt="Twitre" />
+                    </div>
+                  </div>
+                  <div class="btn btn-primary btn-small pull-left" style="background:#4099ff;width:80px;margin-left: -6px;text-align:left;margin-bottom: 3px;margin-top:3px">
+                    <div class="lower-btn">
+                      Twitter
+                    </div>
+                  </div>
+                </a>
+                -->
+                <div style="clear:both"></div>
+                </div>
+                <div class="col-sm-8">
+                <p>
+                  </p><form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#10003;"><input type="hidden" name="authenticity_token" value="s+uhdY2E3F/YOGfbrN/9n7V6S8DqRBo5vu+eTNBWnnzkoUY5h5C+fyhhhY9d1FTGihcSUd7CYmW+sDGwkfaU3A=="><div><label for="user_login">Login</label><br><input autofocus="autofocus" type="text" name="user[login]" id="user_login"></div>
+                  <div><label for="user_password">Password</label><br><input type="password" name="user[password]" id="user_password"></div>
+                    <div><input name="user[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me"><label for="user_remember_me">Remember me</label></div>
+                  <button name="button" type="submit" class="action_btn action_btn_orange sign_in_btn pull-right">
+                      Sign In <i class="fa fa-sign-in"></i>
+</button>                  <div style="clear:both"></div>
+                  <div class="action_btn action_btn_orange forgot_pw_btn pull-right">
+                    <a href="new.html">I forgot my password</a>
+                  </div>
+</form>                
+              </div>
+            </div>
+          </div>
+
+
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    </div><!-- /.modal -->
+
+<style type="text/css">
+  .platform_icon{
+    height: 18px;
+    width: 18px;
+  }
+  .oppcity_null{
+    opacity: 0;
+  }
+  #user_login{
+    padding-left: 0;
+  }
+</style><div id="sign_up" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          </p><form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#10003;"><input type="hidden" name="authenticity_token" value="FwQ17F/DOC4hCESoCabp+D81I4GLgC3n7ef7Z93aJgVATtKgVddaDtFRpvz4rUChAFh6EL8GVbvtuFSbnHospQ=="><div><label for="user_username">Username</label><br><input autofocus="autofocus" type="text" name="user[username]" id="user_username"></div>
+            <div><label for="user_email">Email</label><br><input type="email" name="user[email]" id="user_email"></div>
+            <div><label for="user_password">Password</label><br><input type="password" name="user[password]" id="user_password"></div>
+            <div><label for="user_password_confirmation">Password confirmation</label><br><input type="password" name="user[password_confirmation]" id="user_password_confirmation"></div>
+            <input type="hidden" name="user[referral_code]" id="user_referral_code"><script src="js/recaptcha-api.js" async defer></script><div class="g-recaptcha " data-sitekey="6Lct8CsUAAAAAOodKEvS0RvMRImyEZmDs7RoiEqD"></div>
+          <noscript>
+            <div>
+              <div style="width: 302px; height: 422px; position: relative;">
+                <div style="width: 302px; height: 422px; position: absolute;">
+                  <iframe src="https://www.google.com/recaptcha/api/fallback?k=6Lct8CsUAAAAAOodKEvS0RvMRImyEZmDs7RoiEqD" frameborder="0" scrolling="no" style="width: 302px; height:422px; border-style: none;">
+                  </iframe>
+                </div>
+              </div>
+              <div style="width: 300px; height: 60px; border-style: none;
+                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                  margin: 10px 25px; padding: 0px; resize: none;" value=""></textarea></div>
+            </div>
+          </noscript>
+
+
+            <button name="button" type="submit" class="action_btn action_btn_orange sign_in_btn pull-right">
+              Sign up <i class="fa fa-user-plus"></i>
+</button>            <div style="clear:both"></div>
+</form>        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166343270-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166343270-1');
+</script><script type="text/javascript">
+    $(".send_form").on("click",function(){
+      $(".search_form").submit()
+    })
+    $(".choose_platform_small").bind( "clickoutside",function(event){
+      $(".platform_choose").addClass("hidden")
+    })
+    $(".choose_platform_small").on("click",function(){
+      $(".platform_choose").toggleClass("hidden")
+    })
+    $(".platform_choose li").on("click",function(){
+      $(".platform").html($(this).find("span").html())
+      $(".choose_platform_small .top_img").attr("src",$(this).find("img").attr("src")).removeClass("ps4 steam").addClass($(this).find("img").attr('class'))
+      $("#platform_id").val($(this).data("id"))
+    })
+    </script><script async src="js/1906--ads.js"></script><script type="text/javascript">
+          $(function (){
+            $(".mobile_click").on("click",function(e){
+              if(window.width() > 836){
+                e.preventDefault();
+              }
+            })
+            $(".toggle_history").on("click",function(){
+              $(".history_drop_down").toggleClass("active")
+            })
+            $('[data-toggle="tooltip"]').tooltip()
+
+              $(".modal").on("show.bs.modal",function(){
+                $(".modal").modal("hide")
+              })
+
+            $(".side_nav_trigger").on("click",function(){
+              $(".side-nav").toggleClass("right")
+            })
+            $(".alert-rails").addClass("ready")
+            nothing_to_hide = false
+            callo()
+          });
+          function createCookie(name,value,half_days) {
+              var expires = "";
+              if (half_days) {
+                  var date = new Date();
+                  date.setTime(date.getTime() + (half_days*12*60*60*1000));
+                  expires = "; expires=" + date.toUTCString();
+              }
+              document.cookie = name + "=" + value + expires + "; path=/";
+          }
+
+          function readCookie(name) {
+              var nameEQ = name + "=";
+              var ca = document.cookie.split(';');
+              for(var i=0;i < ca.length;i++) {
+                  var c = ca[i];
+                  while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                  if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+              }
+              return null;
+          }
+
+          function eraseCookie(name) {
+              createCookie(name,"",-1);
+          }
+          function callo(){
+            setTimeout(function(){
+                adBlock = false
+                if(document.getElementById('fatgEwevjsBm')){
+
+                } else {
+                  adBlock = true
+                  console.log("bad bad boy")
+                  $(".glory").remove()
+                  if (!readCookie("adblock")) {
+                    if($(".pfft").length >0){
+                      $(".pfft").modal()
+                      createCookie("adblock",true,1)
+                    }
+                  }
+                  $(".ad_block_warning").show()
+                }
+            },1000)
+          }
+        </script></body></html>
